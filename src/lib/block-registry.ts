@@ -1,26 +1,27 @@
-// src/lib/block-registry.ts
 import dynamic from 'next/dynamic';
-import { normalizeBlockName } from '../lib/normalize-block-name';
+import { normalizeBlockName } from './normalize-block-name';
+import { ComponentType } from 'react';
 
-// Pre-define all possible block components (or auto-discover)
-const blockComponents = {
-  Section: dynamic(() => import('@/components/blocks/Section')),
-  // Add more as you create them
-  // Core blocks can use simple HTML fallbacks
+/**
+ * Mapping normalized block names to local React components.
+ * For example, "Section" comes from "ncos/section" in WordPress
+ * and maps to the "Box" component in the app.
+ */
+const blockComponents: Record<string, ComponentType<any>> = {
+	Section: dynamic(() => import('@/components/blocks/Box').then(mod => mod.default), { ssr: false }),
+	Text: dynamic(() => import('@/components/blocks/Text').then(mod => mod.default), { ssr: false }),
+	Stack: dynamic(() => import('@/components/blocks/Stack').then(mod => mod.default), { ssr: false }),
+	Button: dynamic(() => import('@/components/blocks/Button').then(mod => mod.default), { ssr: false }),
 };
 
-// Auto-discovery helper (optional)
-function getBlockComponent(blockName: string) {
-  console.log('🔍 Original blockName:', blockName);
-  
-  const normalized = normalizeBlockName(blockName);
-  console.log('🔍 Normalized:', normalized);
-  console.log('🔍 Available components:', Object.keys(blockComponents));
-  
-  const component = blockComponents[normalized as keyof typeof blockComponents];
-  console.log('🔍 Found component:', !!component, normalized);
-  
-  return component || null;
+/**
+ * Returns a React component corresponding to a Gutenberg block name.
+ */
+export function getBlockComponent(blockName: string | null): ComponentType<any> | null {
+	if (!blockName) return null;
+	const normalized = normalizeBlockName(blockName);
+	const component = blockComponents[normalized];
+	return component ?? null;
 }
 
-export { blockComponents, getBlockComponent };
+export { blockComponents };

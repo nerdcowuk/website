@@ -3,56 +3,61 @@
 
 import { getBlockComponent } from '../lib/block-registry';
 import { normalizeBlockName } from '../lib/normalize-block-name';
+import parse from 'html-react-parser';
 
 interface GutenbergBlock {
-  name: string;
-  attrs: Record<string, any>;
-  innerBlocks: GutenbergBlock[];
-  innerHTML: string;
+    blockName: string | null;
+    attrs: Record<string, any>;
+    innerBlocks: GutenbergBlock[];
+    innerContent: string[];
 }
 
 interface GutenbergRendererProps {
-  blocks: GutenbergBlock[];
+    blocks: GutenbergBlock[];
 }
 
-// Fallback for unknown blocks
-const DefaultBlock = ({ innerHTML, attrs }: { innerHTML: string; attrs?: any }) => (
-  <div className={attrs?.className} dangerouslySetInnerHTML={{ __html: innerHTML }} />
-);
-
 export function GutenbergRenderer({ blocks }: GutenbergRendererProps) {
-  const renderBlock = (block: GutenbergBlock, index: number) => {
-    const normalizedName = normalizeBlockName(block.name);
-    const BlockComponent = getBlockComponent(block.name);
-    
-    if (BlockComponent) {
-      console.log(`✅ Rendering ${normalizedName} with React component`);
-      return (
-        <BlockComponent
-          key={`${block.name}-${index}`}
-          {...block.attrs}
-          innerBlocks={block.innerBlocks}
-        >
-          {block.innerHTML && (
-            <div dangerouslySetInnerHTML={{ __html: block.innerHTML }} />
-          )}
-        </BlockComponent>
-      );
-    }
-    
-    console.warn(`⚠️ No React component for ${block.name}, using HTML fallback`);
-    return (
-      <DefaultBlock
-        key={`${block.name}-${index}`}
-        innerHTML={block.innerHTML}
-        attrs={block.attrs}
-      />
-    );
-  };
 
-  return (
-    <div className="gutenberg-content">
-      {blocks.map((block, index) => renderBlock(block, index))}
-    </div>
-  );
+    const renderBlock = (block: GutenbergBlock, index: number) => {
+        if (!block.blockName) {
+            return null;
+        }
+
+        const normalizedName = normalizeBlockName(block.blockName);
+        const BlockComponent = getBlockComponent(block.blockName);
+
+        if (BlockComponent) {
+            const { attrs, innerBlocks, innerContent } = block;
+
+            // Filter backend-specific attributes
+            const filteredAttrs = Object.fromEntries(
+                Object.entries(attrs).filter(([key]) => !['lock', 'metadata'].includes(key))
+            );
+
+            // Leaf blocks get children from innerContent; containers get innerBlocks
+            const isLeafBlock = innerBlocks.length === 0;
+            const props: Record<string, any> = {
+                ...filteredAttrs
+            };
+
+            return (
+                <BlockComponent key={`${block.blockName}-${index}`} {...props}>
+                {
+                    !isLeafBlock
+                        ? <GutenbergRenderer blocks={innerBlocks} />
+                        : innerContent?.[0] && (
+                            parse( innerContent[0] )
+                        )
+                }
+                </BlockComponent>
+            );
+        }
+        return null;
+    };
+
+    return (
+        <>
+            {blocks.map((block, index) => renderBlock(block, index))}
+        </>
+    );
 }
