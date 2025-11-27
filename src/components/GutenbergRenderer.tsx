@@ -15,54 +15,6 @@ interface GutenbergRendererProps {
     blocks: GutenbergBlock[];
 }
 
-// Parse attributes and className from WordPress HTML for text blocks
-function parseTextAttributes(innerHTML: string): Record<string, any> {
-    const match = innerHTML.match(/class="([^"]*)"/);
-    if (!match) return {};
-
-    const classes = match[1].split(' ').filter(Boolean);
-    const attrs: Record<string, any> = {};
-    const customClasses: string[] = [];
-
-    for (const cls of classes) {
-        // Parse align attribute: ncos-text--align-{value}
-        const alignMatch = cls.match(/^ncos-text--align-(.+)$/);
-        if (alignMatch) {
-            attrs.align = alignMatch[1];
-            continue;
-        }
-
-        // Parse tag attribute: ncos-text--tag-{value}
-        const tagMatch = cls.match(/^ncos-text--tag-(.+)$/);
-        if (tagMatch) {
-            attrs.tag = tagMatch[1];
-            continue;
-        }
-
-        // Parse preset attribute: ncos-text--preset-{value}
-        const presetMatch = cls.match(/^ncos-text--preset-(.+)$/);
-        if (presetMatch) {
-            attrs.preset = presetMatch[1];
-            continue;
-        }
-
-        // Skip base ncos-text class (Text component adds this)
-        if (cls === 'ncos-text') {
-            continue;
-        }
-
-        // Everything else is a custom class
-        customClasses.push(cls);
-    }
-
-    // Only add className if there are custom classes
-    if (customClasses.length > 0) {
-        attrs.className = customClasses.join(' ');
-    }
-
-    return attrs;
-}
-
 // Extract inner content from HTML string for text blocks
 function extractTextContent(innerHTML: string): React.ReactNode {
     const options: HTMLReactParserOptions = {
@@ -92,12 +44,6 @@ export function GutenbergRenderer({ blocks }: GutenbergRendererProps) {
             let filteredAttrs = Object.fromEntries(
                 Object.entries(attrs).filter(([key]) => !['lock', 'metadata'].includes(key))
             );
-
-            // For text blocks, parse attributes from HTML classes if attrs are empty
-            if (block.name === 'ncos/text' && block.innerHTML) {
-                const parsedAttrs = parseTextAttributes(block.innerHTML);
-                filteredAttrs = { ...parsedAttrs, ...filteredAttrs };
-            }
 
             const isLeafBlock = innerBlocks.length === 0;
 

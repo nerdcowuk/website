@@ -25,12 +25,14 @@ export default function Text({
     // Use tag as the element if provided, otherwise use as, otherwise default to 'p'
     const Tag = (tag || as || 'p') as any;
 
+    console.log('Text', props);
+
     const classNames = cn(
-        styles.text,
-        className,
-        preset && styles[`text--preset-${preset}`],
-        align && styles[`text--align-${align}`],
-        tag && styles[`text--tag-${tag}`]
+        styles[`ncos-text`],
+        preset && styles[`ncos-text--preset-${preset}`],
+        align && styles[`ncos-text--align-${align}`],
+        tag && styles[`ncos-text--tag-${tag}`],
+        className
     );
 
     // For non-string children (React nodes with HTML), don't sanitize
