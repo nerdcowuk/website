@@ -15,6 +15,37 @@ interface GutenbergRendererProps {
     blocks: GutenbergBlock[];
 }
 
+// Parse attributes from WordPress HTML classes for text blocks
+function parseTextAttributes(innerHTML: string): Record<string, any> {
+    const match = innerHTML.match(/class="([^"]*)"/);
+    if (!match) return {};
+
+    const classes = match[1].split(' ');
+    const attrs: Record<string, any> = {};
+
+    for (const cls of classes) {
+        // Parse align attribute: ncos-text--align-{value}
+        const alignMatch = cls.match(/^ncos-text--align-(.+)$/);
+        if (alignMatch) {
+            attrs.align = alignMatch[1];
+        }
+
+        // Parse tag attribute: ncos-text--tag-{value}
+        const tagMatch = cls.match(/^ncos-text--tag-(.+)$/);
+        if (tagMatch) {
+            attrs.tag = tagMatch[1];
+        }
+
+        // Parse preset attribute: ncos-text--preset-{value}
+        const presetMatch = cls.match(/^ncos-text--preset-(.+)$/);
+        if (presetMatch) {
+            attrs.preset = presetMatch[1];
+        }
+    }
+
+    return attrs;
+}
+
 // Extract inner content from HTML string for text blocks
 function extractTextContent(innerHTML: string): React.ReactNode {
     const options: HTMLReactParserOptions = {
@@ -41,9 +72,15 @@ export function GutenbergRenderer({ blocks }: GutenbergRendererProps) {
             const { attrs, innerBlocks } = block;
 
             // Filter out backend-only attrs
-            const filteredAttrs = Object.fromEntries(
+            let filteredAttrs = Object.fromEntries(
                 Object.entries(attrs).filter(([key]) => !['lock', 'metadata'].includes(key))
             );
+
+            // For text blocks, parse attributes from HTML classes if attrs are empty
+            if (block.name === 'ncos/text' && block.innerHTML) {
+                const parsedAttrs = parseTextAttributes(block.innerHTML);
+                filteredAttrs = { ...parsedAttrs, ...filteredAttrs };
+            }
 
             const isLeafBlock = innerBlocks.length === 0;
 
