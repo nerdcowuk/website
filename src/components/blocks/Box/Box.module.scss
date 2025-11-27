@@ -1,0 +1,27 @@
+@use '@/styles/tokens' as *;
+
+.box {
+  // Base box/section styles
+  display: block;
+  position: relative;
+
+  // Add your box variants here
+  // Example:
+  // &--theme-light {
+  //   background-color: $color-background-primary;
+  // }
+  //
+  // &--theme-dark {
+  //   background-color: $color-background-secondary;
+  // }
+  //
+  // &--maxWidth-narrow {
+  //   max-width: 768px;
+  //   margin-left: auto;
+  //   margin-right: auto;
+  // }
+  //
+  // &--disableGutters {
+  //   padding: 0;
+  // }
+}

@@ -1,0 +1,34 @@
+// ============================================================================
+// Base - Default HTML element styles
+// ============================================================================
+
+@use '../tokens' as *;
+
+html {
+  font-size: 16px;
+}
+
+body {
+  color: $color-text-primary;
+  background: $color-background-primary;
+  font-family: $font-family-base;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// Dark mode
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    color: $color-text-primary-dark;
+    background: $color-background-primary-dark;
+  }
+}

@@ -1,0 +1,39 @@
+@use '@/styles/tokens' as *;
+
+.text {
+  // Base text styles
+  font-family: $font-family-base;
+  color: $color-text-primary;
+  line-height: $line-height-normal;
+
+  // Add your text presets here
+  // Example:
+  // &--preset-heading-1 {
+  //   font-size: $font-size-4xl;
+  //   font-weight: $font-weight-bold;
+  //   line-height: $line-height-tight;
+  // }
+  //
+  // &--preset-body {
+  //   font-size: $font-size-base;
+  //   line-height: $line-height-relaxed;
+  // }
+
+  // Alignment modifiers
+  &--align-left {
+    text-align: left;
+  }
+
+  &--align-center {
+    text-align: center;
+  }
+
+  &--align-right {
+    text-align: right;
+  }
+
+  // Dark mode
+  @media (prefers-color-scheme: dark) {
+    color: $color-text-primary-dark;
+  }
+}

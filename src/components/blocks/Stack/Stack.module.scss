@@ -1,0 +1,103 @@
+@use '@/styles/tokens' as *;
+
+.stack {
+  // Base stack (flexbox) styles
+  display: flex;
+
+  // Direction modifiers
+  &--direction-row {
+    flex-direction: row;
+  }
+
+  &--direction-column {
+    flex-direction: column;
+  }
+
+  &--direction-rowReverse {
+    flex-direction: row-reverse;
+  }
+
+  &--direction-columnReverse {
+    flex-direction: column-reverse;
+  }
+
+  // Spacing modifiers (gap)
+  &--spacing-1 {
+    gap: $spacing-1;
+  }
+
+  &--spacing-2 {
+    gap: $spacing-2;
+  }
+
+  &--spacing-3 {
+    gap: $spacing-3;
+  }
+
+  &--spacing-4 {
+    gap: $spacing-4;
+  }
+
+  &--spacing-6 {
+    gap: $spacing-6;
+  }
+
+  &--spacing-8 {
+    gap: $spacing-8;
+  }
+
+  &--spacing-12 {
+    gap: $spacing-12;
+  }
+
+  // Alignment modifiers
+  &--align-start {
+    align-items: flex-start;
+  }
+
+  &--align-center {
+    align-items: center;
+  }
+
+  &--align-end {
+    align-items: flex-end;
+  }
+
+  &--align-stretch {
+    align-items: stretch;
+  }
+
+  &--align-baseline {
+    align-items: baseline;
+  }
+
+  // Justify modifiers
+  &--justify-start {
+    justify-content: flex-start;
+  }
+
+  &--justify-center {
+    justify-content: center;
+  }
+
+  &--justify-end {
+    justify-content: flex-end;
+  }
+
+  &--justify-between {
+    justify-content: space-between;
+  }
+
+  &--justify-around {
+    justify-content: space-around;
+  }
+
+  &--justify-evenly {
+    justify-content: space-evenly;
+  }
+
+  // Wrap modifiers
+  &--noWrap {
+    flex-wrap: nowrap;
+  }
+}

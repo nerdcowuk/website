@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import styles from './Stack.module.scss';
 
 interface StackProps {
     as?: string | React.ComponentType<any>;
@@ -14,7 +15,7 @@ interface StackProps {
     [key: string]: any;
 }
 
-export default function Stack({ 
+export default function Stack({
     as: Tag = 'div',
     className,
     children,
@@ -23,16 +24,16 @@ export default function Stack({
     align,
     justify,
     wrap,
-    ...props 
+    ...props
 }: StackProps) {
     const classNames = cn(
-        'ncos-stack',
+        styles.stack,
         className,
-        direction && `ncos-stack--direction-${direction}`,
-        spacing && `ncos-stack--spacing-${spacing}`,
-        align && `ncos-stack--align-${align}`,
-        justify && `ncos-stack--justify-${justify}`,
-        wrap === false && 'ncos-stack--no-wrap'
+        direction && styles[`stack--direction-${direction}`],
+        spacing && styles[`stack--spacing-${spacing}`],
+        align && styles[`stack--align-${align}`],
+        justify && styles[`stack--justify-${justify}`],
+        wrap === false && styles['stack--noWrap']
     );
     return (
         <Tag className={classNames} {...props}>

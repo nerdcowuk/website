@@ -1,5 +1,6 @@
 import cn from 'classnames';
 import { ReactNode } from 'react';
+import styles from './Button.module.scss';
 
 interface ButtonProps {
     as?: string | React.ComponentType<any>;
@@ -31,9 +32,9 @@ export default function Button({
     ...props
 }: ButtonProps) {
     const classNames = cn(
-        'ncos-button',
+        styles.button,
         className,
-        variant && `ncos-button--${variant}`
+        variant && styles[`button--variant-${variant}`]
     );
 
     // Use <a> for href, button otherwise
@@ -51,8 +52,8 @@ export default function Button({
             })}
             {...props}
         >
-            <span className="ncos-button__state-layer">
-                <span className="ncos-button__label">{children}</span>
+            <span className={styles.button__stateLayer}>
+                <span className={styles.button__label}>{children}</span>
             </span>
         </Component>
     );

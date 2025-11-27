@@ -8,10 +8,10 @@ import { ComponentType } from 'react';
  * and maps to the "Box" component in the app.
  */
 const blockComponents: Record<string, ComponentType<any>> = {
-	Section: dynamic(() => import('@/components/blocks/Box').then(mod => mod.default), { ssr: false }),
-	Text: dynamic(() => import('@/components/blocks/Text').then(mod => mod.default), { ssr: false }),
-	Stack: dynamic(() => import('@/components/blocks/Stack').then(mod => mod.default), { ssr: false }),
-	Button: dynamic(() => import('@/components/blocks/Button').then(mod => mod.default), { ssr: false }),
+	Section: dynamic(() => import('@/components/blocks/Box/Box').then(mod => mod.default), { ssr: false }),
+	Text: dynamic(() => import('@/components/blocks/Text/Text').then(mod => mod.default), { ssr: false }),
+	Stack: dynamic(() => import('@/components/blocks/Stack/Stack').then(mod => mod.default), { ssr: false }),
+	Button: dynamic(() => import('@/components/blocks/Button/Button').then(mod => mod.default), { ssr: false }),
 };
 
 /**
