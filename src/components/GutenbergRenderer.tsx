@@ -15,13 +15,16 @@ interface GutenbergRendererProps {
     blocks: GutenbergBlock[];
 }
 
-// Parse attributes from WordPress HTML classes for text blocks
+// Parse attributes and className from WordPress HTML for text blocks
 function parseTextAttributes(innerHTML: string): Record<string, any> {
     const match = innerHTML.match(/class="([^"]*)"/);
     if (!match) return {};
 
-    const classes = match[1].split(' ');
-    const attrs: Record<string, any> = {};
+    const classNames = match[1];
+    const classes = classNames.split(' ');
+    const attrs: Record<string, any> = {
+        className: classNames // Preserve all class names
+    };
 
     for (const cls of classes) {
         // Parse align attribute: ncos-text--align-{value}
