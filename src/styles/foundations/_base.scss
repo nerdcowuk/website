@@ -2,14 +2,11 @@
 // Base - Default HTML element styles
 // ============================================================================
 
-@use '../tokens' as *;
+@use '../extends' as *;
 
 body {
-	font-family: var(--ncos-text-body-lg-large-font-family);
-    font-size: var(--ncos-text-body-lg-large-font-size);
-    font-weight: var(--ncos-text-body-lg-large-font-weight);
-    letter-spacing: var(--ncos-text-body-lg-large-font-letter-spacing);
-    line-height: var(--ncos-text-body-lg-large-font-line-height);
+	@extend %text-style-body-lg;
+	
 	color: var(--ncos-colour-sys-on-surface-alt);
 	background: var(--ncos-colour-sys-surface);
 }
@@ -22,4 +19,9 @@ article {
 a {
 	color: inherit;
 	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
 }

@@ -1,16 +1,5 @@
-@use '@/styles/tokens' as *;
+@use '../../../styles/extends' as *;
 
-.text {
-  // Alignment modifiers
-  &--align-left {
-    text-align: left;
-  }
-
-  &--align-center {
-    text-align: center;
-  }
-
-  &--align-right {
-    text-align: right;
-  }
+.ncos-text {
+	@extend %text-style-body-lg;
 }
