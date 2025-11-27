@@ -12,15 +12,18 @@ interface TextProps {
     [key: string]: any;
 }
 
-export default function Text({ 
-    as: Tag = 'p',
+export default function Text({
+    as,
     className,
     children,
     preset,
     align,
     tag,
-    ...props 
+    ...props
 }: TextProps) {
+    // Use tag as the element if provided, otherwise use as, otherwise default to 'p'
+    const Tag = (tag || as || 'p') as any;
+
     const classNames = cn(
         'ncos-text',
         className,
@@ -29,12 +32,13 @@ export default function Text({
         tag && `ncos-text--tag-${tag}`
     );
 
-	console.log(children);
-	
+    // For non-string children (React nodes with HTML), don't sanitize
+    // For string children, allow common inline formatting tags
     const cleanContent = typeof children === 'string' ? sanitizeHtml(children, {
-        allowedTags: ['strong', 'em', 'span'],
+        allowedTags: ['strong', 'em', 'span', 'a', 'br'],
         allowedAttributes: {
-            span: ['class']
+            span: ['class'],
+            a: ['href', 'target', 'rel', 'class']
         }
     }) : children;
 
