@@ -1,9 +1,50 @@
 @use '../../../styles/extends' as *;
 
 .ncos-text {
-	@extend %text-style-body-lg;
-}
 
-.ncos-text--tag-h3 {
-	color: red;
+	// Generic tag and preset styles
+	&--tag,
+	&--preset {
+
+		&-h1 {
+			@extend %text-style-display;
+
+			color: var(--ncos-colour-sys-on-surface);
+		}
+
+		&-h2 {
+			@extend %text-style-heading-2xl;
+
+			color: var(--ncos-colour-sys-on-surface);
+		}
+
+		&-h3 {
+			@extend %text-style-heading-xl;
+
+			color: var(--ncos-colour-sys-on-surface);
+		}
+
+		&-h4 {
+			@extend %text-style-heading-lg;
+
+			color: var(--ncos-colour-sys-on-surface);
+		}
+
+		&-h5 {
+			@extend %text-style-heading-md;
+
+			color: var(--ncos-colour-sys-on-surface);
+		}
+
+		&-h6 {
+			@extend %text-style-heading-sm;
+
+			color: var(--ncos-colour-sys-on-surface);
+		}
+
+		&-p {
+			@extend %text-style-body-lg;
+		}
+	}
+
 }

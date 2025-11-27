@@ -25,13 +25,11 @@ export default function Text({
     // Use tag as the element if provided, otherwise use as, otherwise default to 'p'
     const Tag = (tag || as || 'p') as any;
 
-    console.log('Text', props);
-
     const classNames = cn(
         styles[`ncos-text`],
+        styles[`ncos-text--tag-${Tag}`],
         preset && styles[`ncos-text--preset-${preset}`],
         align && styles[`ncos-text--align-${align}`],
-        tag && styles[`ncos-text--tag-${tag}`],
         className
     );
 
@@ -46,6 +44,6 @@ export default function Text({
     }) : children;
 
     return (
-        <Tag className={classNames} {...props}>#{cleanContent}</Tag>
+        <Tag className={classNames} {...props}>{cleanContent}</Tag>
     );
 }

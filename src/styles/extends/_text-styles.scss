@@ -27,18 +27,18 @@ $bp-large: 1200px;
 }
 
 %text-style-heading-2xl {
-    font-family: var(--ncos-text-display-small-font-family);
-    font-size: var(--ncos-text-display-small-font-size);
-    font-weight: var(--ncos-text-display-small-font-weight);
-    letter-spacing: var(--ncos-text-display-small-font-leter-spacing);
-    line-height: var(--ncos-text-display-small-font-line-height);
+    font-family: var(--ncos-text-heading-2xl-small-font-family);
+    font-size: var(--ncos-text-heading-2xl-small-font-size);
+    font-weight: var(--ncos-text-heading-2xl-small-font-weight);
+    letter-spacing: var(--ncos-text-heading-2xl-small-font-leter-spacing);
+    line-height: var(--ncos-text-heading-2xl-small-font-line-height);
 
     @media screen and (min-width: $bp-medium) {
-        font-family: var(--ncos-text-display-medium-font-family);
-        font-size: var(--ncos-text-display-medium-font-size);
-        font-weight: var(--ncos-text-display-medium-font-weight);
-        letter-spacing: var(--ncos-text-display-medium-font-leter-spacing);
-        line-height: var(--ncos-text-display-medium-font-line-height);
+        font-family: var(--ncos-text-heading-2xl-medium-font-family);
+        font-size: var(--ncos-text-heading-2xl-medium-font-size);
+        font-weight: var(--ncos-text-heading-2xl-medium-font-weight);
+        letter-spacing: var(--ncos-text-heading-2xl-medium-font-leter-spacing);
+        line-height: var(--ncos-text-heading-2xl-medium-font-line-height);
     }
 
     @media screen and (min-width: $bp-large) {
@@ -47,6 +47,102 @@ $bp-large: 1200px;
         font-weight: var(--ncos-text-heading-2xl-large-font-weight);
         letter-spacing: var(--ncos-text-heading-2xl-large-font-letter-spacing);
         line-height: var(--ncos-text-heading-2xl-large-font-line-height);
+    }
+}
+
+%text-style-heading-xl {
+    font-family: var(--ncos-text-heading-xl-small-font-family);
+    font-size: var(--ncos-text-heading-xl-small-font-size);
+    font-weight: var(--ncos-text-heading-xl-small-font-weight);
+    letter-spacing: var(--ncos-text-heading-xl-small-font-leter-spacing);
+    line-height: var(--ncos-text-heading-xl-small-font-line-height);
+
+    @media screen and (min-width: $bp-medium) {
+        font-family: var(--ncos-text-heading-xl-medium-font-family);
+        font-size: var(--ncos-text-heading-xl-medium-font-size);
+        font-weight: var(--ncos-text-heading-xl-medium-font-weight);
+        letter-spacing: var(--ncos-text-heading-xl-medium-font-leter-spacing);
+        line-height: var(--ncos-text-heading-xl-medium-font-line-height);
+    }
+
+    @media screen and (min-width: $bp-large) {
+        font-family: var(--ncos-text-heading-xl-large-font-family);
+        font-size: var(--ncos-text-heading-xl-large-font-size);
+        font-weight: var(--ncos-text-heading-xl-large-font-weight);
+        letter-spacing: var(--ncos-text-heading-xl-large-font-letter-spacing);
+        line-height: var(--ncos-text-heading-xl-large-font-line-height);
+    }
+}
+
+%text-style-heading-lg {
+    font-family: var(--ncos-text-heading-lg-small-font-family);
+    font-size: var(--ncos-text-heading-lg-small-font-size);
+    font-weight: var(--ncos-text-heading-lg-small-font-weight);
+    letter-spacing: var(--ncos-text-heading-lg-small-font-leter-spacing);
+    line-height: var(--ncos-text-heading-lg-small-font-line-height);
+
+    @media screen and (min-width: $bp-medium) {
+        font-family: var(--ncos-text-heading-lg-medium-font-family);
+        font-size: var(--ncos-text-heading-lg-medium-font-size);
+        font-weight: var(--ncos-text-heading-lg-medium-font-weight);
+        letter-spacing: var(--ncos-text-heading-lg-medium-font-leter-spacing);
+        line-height: var(--ncos-text-heading-lg-medium-font-line-height);
+    }
+
+    @media screen and (min-width: $bp-large) {
+        font-family: var(--ncos-text-heading-lg-large-font-family);
+        font-size: var(--ncos-text-heading-lg-large-font-size);
+        font-weight: var(--ncos-text-heading-lg-large-font-weight);
+        letter-spacing: var(--ncos-text-heading-lg-large-font-letter-spacing);
+        line-height: var(--ncos-text-heading-lg-large-font-line-height);
+    }
+}
+
+%text-style-heading-md {
+    font-family: var(--ncos-text-heading-md-small-font-family);
+    font-size: var(--ncos-text-heading-md-small-font-size);
+    font-weight: var(--ncos-text-heading-md-small-font-weight);
+    letter-spacing: var(--ncos-text-heading-md-small-font-leter-spacing);
+    line-height: var(--ncos-text-heading-md-small-font-line-height);
+
+    @media screen and (min-width: $bp-medium) {
+        font-family: var(--ncos-text-heading-md-medium-font-family);
+        font-size: var(--ncos-text-heading-md-medium-font-size);
+        font-weight: var(--ncos-text-heading-md-medium-font-weight);
+        letter-spacing: var(--ncos-text-heading-md-medium-font-leter-spacing);
+        line-height: var(--ncos-text-heading-md-medium-font-line-height);
+    }
+
+    @media screen and (min-width: $bp-large) {
+        font-family: var(--ncos-text-heading-md-large-font-family);
+        font-size: var(--ncos-text-heading-md-large-font-size);
+        font-weight: var(--ncos-text-heading-md-large-font-weight);
+        letter-spacing: var(--ncos-text-heading-md-large-font-letter-spacing);
+        line-height: var(--ncos-text-heading-md-large-font-line-height);
+    }
+}
+
+%text-style-heading-sm {
+    font-family: var(--ncos-text-heading-sm-small-font-family);
+    font-size: var(--ncos-text-heading-sm-small-font-size);
+    font-weight: var(--ncos-text-heading-sm-small-font-weight);
+    letter-spacing: var(--ncos-text-heading-sm-small-font-leter-spacing);
+    line-height: var(--ncos-text-heading-sm-small-font-line-height);
+
+    @media screen and (min-width: $bp-medium) {
+        font-family: var(--ncos-text-heading-sm-medium-font-family);
+        font-size: var(--ncos-text-heading-sm-medium-font-size);
+        font-weight: var(--ncos-text-heading-sm-medium-font-weight);
+        letter-spacing: var(--ncos-text-heading-sm-medium-font-leter-spacing);
+        line-height: var(--ncos-text-heading-sm-medium-font-line-height);
+    }
+
+    @media screen and (min-width: $bp-large) {
+        font-family: var(--ncos-text-heading-sm-large-font-family);
+        font-size: var(--ncos-text-heading-sm-large-font-size);
+        font-weight: var(--ncos-text-heading-sm-large-font-weight);
+        letter-spacing: var(--ncos-text-heading-sm-large-font-letter-spacing);
+        line-height: var(--ncos-text-heading-sm-large-font-line-height);
     }
 }
 
@@ -71,5 +167,77 @@ $bp-large: 1200px;
         font-weight: var(--ncos-text-body-lg-large-font-weight);
         letter-spacing: var(--ncos-text-body-lg-large-font-letter-spacing);
         line-height: var(--ncos-text-body-lg-large-font-line-height);
+    }
+}
+
+%text-style-body-md {
+    font-family: var(--ncos-text-body-md-small-font-family);
+    font-size: var(--ncos-text-body-md-small-font-size);
+    font-weight: var(--ncos-text-body-md-small-font-weight);
+    letter-spacing: var(--ncos-text-body-md-small-font-letter-spacing);
+    line-height: var(--ncos-text-body-md-small-font-line-height);
+
+    @media screen and (min-width: $bp-medium) {
+        font-family: var(--ncos-text-body-md-medium-font-family);
+        font-size: var(--ncos-text-body-md-medium-font-size);
+        font-weight: var(--ncos-text-body-md-medium-font-weight);
+        letter-spacing: var(--ncos-text-body-md-medium-font-letter-spacing);
+        line-height: var(--ncos-text-body-md-medium-font-line-height);
+    }
+
+    @media screen and (min-width: $bp-large) {
+        font-family: var(--ncos-text-body-md-large-font-family);
+        font-size: var(--ncos-text-body-md-large-font-size);
+        font-weight: var(--ncos-text-body-md-large-font-weight);
+        letter-spacing: var(--ncos-text-body-md-large-font-letter-spacing);
+        line-height: var(--ncos-text-body-md-large-font-line-height);
+    }
+}
+
+%text-style-body-sm {
+    font-family: var(--ncos-text-body-sm-small-font-family);
+    font-size: var(--ncos-text-body-sm-small-font-size);
+    font-weight: var(--ncos-text-body-sm-small-font-weight);
+    letter-spacing: var(--ncos-text-body-sm-small-font-letter-spacing);
+    line-height: var(--ncos-text-body-sm-small-font-line-height);
+
+    @media screen and (min-width: $bp-medium) {
+        font-family: var(--ncos-text-body-sm-medium-font-family);
+        font-size: var(--ncos-text-body-sm-medium-font-size);
+        font-weight: var(--ncos-text-body-sm-medium-font-weight);
+        letter-spacing: var(--ncos-text-body-sm-medium-font-letter-spacing);
+        line-height: var(--ncos-text-body-sm-medium-font-line-height);
+    }
+
+    @media screen and (min-width: $bp-large) {
+        font-family: var(--ncos-text-body-sm-large-font-family);
+        font-size: var(--ncos-text-body-sm-large-font-size);
+        font-weight: var(--ncos-text-body-sm-large-font-weight);
+        letter-spacing: var(--ncos-text-body-sm-large-font-letter-spacing);
+        line-height: var(--ncos-text-body-sm-large-font-line-height);
+    }
+}
+
+%text-style-label {
+    font-family: var(--ncos-text-label-small-font-family);
+    font-size: var(--ncos-text-label-small-font-size);
+    font-weight: var(--ncos-text-label-small-font-weight);
+    letter-spacing: var(--ncos-text-label-small-font-letter-spacing);
+    line-height: var(--ncos-text-label-small-font-line-height);
+
+    @media screen and (min-width: $bp-medium) {
+        font-family: var(--ncos-text-label-medium-font-family);
+        font-size: var(--ncos-text-label-medium-font-size);
+        font-weight: var(--ncos-text-label-medium-font-weight);
+        letter-spacing: var(--ncos-text-label-medium-font-letter-spacing);
+        line-height: var(--ncos-text-label-medium-font-line-height);
+    }
+
+    @media screen and (min-width: $bp-large) {
+        font-family: var(--ncos-text-label-large-font-family);
+        font-size: var(--ncos-text-label-large-font-size);
+        font-weight: var(--ncos-text-label-large-font-weight);
+        letter-spacing: var(--ncos-text-label-large-font-letter-spacing);
+        line-height: var(--ncos-text-label-large-font-line-height);
     }
 }

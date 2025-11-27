@@ -1,8 +1,7 @@
 import { notFound } from 'next/navigation';
 import { GutenbergRenderer } from '@/components/GutenbergRenderer';
+import Text from '@/components/blocks/Text/Text';
 import { getPostBySlug } from '@/lib/wp-fetch';
-
-export const revalidate = 60;
 
 interface PageProps {
 	params: Promise<{
@@ -26,16 +25,16 @@ export default async function BlogPost({ params }: PageProps) {
 
 			<header>
 				{post.date && (
-					<time>
+					<Text as="time">
 						{new Date(post.date).toLocaleDateString('en-US', {
 							year: 'numeric',
 							month: 'long',
 							day: 'numeric'
 						})}
-					</time>
+					</Text>
 				)}
 
-				<h1>{post.title.rendered}</h1>
+				<Text as="h1">{post.title.rendered}</Text>
 
 				{post._embedded?.author && post._embedded.author[0] && (
 					<div className="mt-2 text-sm text-gray-600">
