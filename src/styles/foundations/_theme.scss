@@ -5,9 +5,161 @@
 @use '../tokens' as *;
 
 :root {
-    --ncos-colour-sys-surface: #{$ncos-colour-sys-surface};
     --ncos-colour-sys-primary: #{$ncos-colour-sys-primary};
     --ncos-colour-sys-on-primary: #{$ncos-colour-sys-on-primary};
-    --ncos-colour-sys-outline: #{$ncos-colour-sys-outline};
+
+    --ncos-colour-sys-primary-container: #{$ncos-colour-sys-primary-container};
+    --ncos-colour-sys-on-primary-container: #{$ncos-colour-sys-on-primary-container};
+
     --ncos-colour-sys-secondary: #{$ncos-colour-sys-secondary};
+    --ncos-colour-sys-on-secondary: #{$ncos-colour-sys-on-secondary};
+    --ncos-colour-sys-on-secondary-alt: #{$ncos-colour-sys-on-secondary-alt};
+
+    --ncos-colour-sys-secondary-container: #{$ncos-colour-sys-secondary-container};
+    --ncos-colour-sys-on-secondary-container: #{$ncos-colour-sys-on-secondary-container};
+
+    --ncos-colour-sys-on-surface: #{$ncos-colour-sys-on-surface};
+    --ncos-colour-sys-on-surface-alt: #{$ncos-colour-sys-on-surface-alt};
+
+    --ncos-colour-sys-error: #{$ncos-colour-sys-error};
+    --ncos-colour-sys-on-error: #{$ncos-colour-sys-on-error};
+
+    --ncos-colour-sys-outline: #{$ncos-colour-sys-outline};
+    --ncos-colour-sys-outline-alt: #{$ncos-colour-sys-outline-alt};
+    
+    --ncos-colour-sys-surface: #{$ncos-colour-sys-surface};
+    --ncos-colour-sys-surface-container-low: #{$ncos-colour-sys-surface-container-low};
+    --ncos-colour-sys-surface-container: #{$ncos-colour-sys-surface-container};
+    --ncos-colour-sys-surface-container-high: #{$ncos-colour-sys-surface-container-high};
+
+    --ncos-colour-sys-contrast-surface: #{$ncos-colour-sys-contrast-surface};
+    --ncos-colour-sys-on-contrast-surface: #{$ncos-colour-sys-on-contrast-surface};
+
+    --ncos-colour-sys-success: #{$ncos-colour-sys-success};
+    --ncos-colour-sys-on-success: #{$ncos-colour-sys-on-success};
+
+    --ncos-colour-sys-surface-bridge: #{$ncos-colour-sys-surface-bridge};
+    --ncos-colour-sys-surface-bridge-alt: #{$ncos-colour-sys-surface-bridge-alt};
+
+    --ncos-colour-sys-tertiary: #{$ncos-colour-sys-tertiary};
+    --ncos-colour-sys-on-tertiary: #{$ncos-colour-sys-on-tertiary};
+
+    --ncos-colour-sys-tertiary-container: #{$ncos-colour-sys-tertiary-container};
+    --ncos-colour-sys-on-tertiary-container: #{$ncos-colour-sys-on-tertiary-container};
+
+    --ncos-colour-state-layer-primary-opacity-08: #{$ncos-colour-state-layer-primary-opacity-08};
+    --ncos-colour-state-layer-primary-opacity-12: #{$ncos-colour-state-layer-primary-opacity-12};
+    --ncos-colour-state-layer-primary-opacity-16: #{$ncos-colour-state-layer-primary-opacity-16};
+
+    --ncos-colour-state-layer-on-primary-opacity-08: #{$ncos-colour-state-layer-on-primary-opacity-08};
+    --ncos-colour-state-layer-on-primary-opacity-12: #{$ncos-colour-state-layer-on-primary-opacity-12};
+    --ncos-colour-state-layer-on-primary-opacity-16: #{$ncos-colour-state-layer-on-primary-opacity-16};
+
+    --ncos-colour-state-layer-primary-container-opacity-08: #{$ncos-colour-state-layer-primary-container-opacity-08};
+    --ncos-colour-state-layer-primary-container-opacity-12: #{$ncos-colour-state-layer-primary-container-opacity-12};
+    --ncos-colour-state-layer-primary-container-opacity-16: #{$ncos-colour-state-layer-primary-container-opacity-16};
+
+    --ncos-colour-state-layer-on-primary-container-opacity-08: #{$ncos-colour-state-layer-on-primary-container-opacity-08};
+    --ncos-colour-state-layer-on-primary-container-opacity-12: #{$ncos-colour-state-layer-on-primary-container-opacity-12};
+    --ncos-colour-state-layer-on-primary-container-opacity-16: #{$ncos-colour-state-layer-on-primary-container-opacity-16};
+
+    --ncos-colour-state-layer-secondary-opacity-08: #{$ncos-colour-state-layer-secondary-opacity-08};
+    --ncos-colour-state-layer-secondary-opacity-12: #{$ncos-colour-state-layer-secondary-opacity-12};
+    --ncos-colour-state-layer-secondary-opacity-16: #{$ncos-colour-state-layer-secondary-opacity-16};
+
+    --ncos-colour-state-layer-on-secondary-opacity-08: #{$ncos-colour-state-layer-on-secondary-opacity-08};
+    --ncos-colour-state-layer-on-secondary-opacity-12: #{$ncos-colour-state-layer-on-secondary-opacity-12};
+    --ncos-colour-state-layer-on-secondary-opacity-16: #{$ncos-colour-state-layer-on-secondary-opacity-16};
+
+    --ncos-colour-state-layer-on-secondary-alt-opacity-08: #{$ncos-colour-state-layer-on-secondary-alt-opacity-08};
+    --ncos-colour-state-layer-on-secondary-alt-opacity-12: #{$ncos-colour-state-layer-on-secondary-alt-opacity-12};
+    --ncos-colour-state-layer-on-secondary-alt-opacity-16: #{$ncos-colour-state-layer-on-secondary-alt-opacity-16};
+
+    --ncos-colour-state-layer-secondary-container-opacity-08: #{$ncos-colour-state-layer-secondary-container-opacity-08};
+    --ncos-colour-state-layer-secondary-container-opacity-12: #{$ncos-colour-state-layer-secondary-container-opacity-12};
+    --ncos-colour-state-layer-secondary-container-opacity-16: #{$ncos-colour-state-layer-secondary-container-opacity-16};
+
+    --ncos-colour-state-layer-on-secondary-container-opacity-08: #{$ncos-colour-state-layer-on-secondary-container-opacity-08};
+    --ncos-colour-state-layer-on-secondary-container-opacity-12: #{$ncos-colour-state-layer-on-secondary-container-opacity-12};
+    --ncos-colour-state-layer-on-secondary-container-opacity-16: #{$ncos-colour-state-layer-on-secondary-container-opacity-16};
+
+    --ncos-colour-state-layer-tertiary-opacity-08: #{$ncos-colour-state-layer-tertiary-opacity-08};
+    --ncos-colour-state-layer-tertiary-opacity-12: #{$ncos-colour-state-layer-tertiary-opacity-12};
+    --ncos-colour-state-layer-tertiary-opacity-16: #{$ncos-colour-state-layer-tertiary-opacity-16};
+
+    --ncos-colour-state-layer-on-tertiary-opacity-08: #{$ncos-colour-state-layer-on-tertiary-opacity-08};
+    --ncos-colour-state-layer-on-tertiary-opacity-12: #{$ncos-colour-state-layer-on-tertiary-opacity-12};
+    --ncos-colour-state-layer-on-tertiary-opacity-16: #{$ncos-colour-state-layer-on-tertiary-opacity-16};
+
+    --ncos-colour-state-layer-tertiary-container-opacity-08: #{$ncos-colour-state-layer-tertiary-container-opacity-08};
+    --ncos-colour-state-layer-tertiary-container-opacity-12: #{$ncos-colour-state-layer-tertiary-container-opacity-12};
+    --ncos-colour-state-layer-tertiary-container-opacity-16: #{$ncos-colour-state-layer-tertiary-container-opacity-16};
+
+    --ncos-colour-state-layer-on-tertiary-container-opacity-08: #{$ncos-colour-state-layer-on-tertiary-container-opacity-08};
+    --ncos-colour-state-layer-on-tertiary-container-opacity-12: #{$ncos-colour-state-layer-on-tertiary-container-opacity-12};
+    --ncos-colour-state-layer-on-tertiary-container-opacity-16: #{$ncos-colour-state-layer-on-tertiary-container-opacity-16};
+
+    --ncos-colour-state-layer-outline-opacity-08: #{$ncos-colour-state-layer-outline-opacity-08};
+    --ncos-colour-state-layer-outline-opacity-12: #{$ncos-colour-state-layer-outline-opacity-12};
+    --ncos-colour-state-layer-outline-opacity-16: #{$ncos-colour-state-layer-outline-opacity-16};
+
+    --ncos-colour-state-layer-outline-alt-opacity-08: #{$ncos-colour-state-layer-outline-alt-opacity-08};
+    --ncos-colour-state-layer-outline-alt-opacity-12: #{$ncos-colour-state-layer-outline-alt-opacity-12};
+    --ncos-colour-state-layer-outline-alt-opacity-16: #{$ncos-colour-state-layer-outline-alt-opacity-16};
+
+    --ncos-colour-state-layer-error-opacity-08: #{$ncos-colour-state-layer-error-opacity-08};
+    --ncos-colour-state-layer-error-opacity-12: #{$ncos-colour-state-layer-error-opacity-12};
+    --ncos-colour-state-layer-error-opacity-16: #{$ncos-colour-state-layer-error-opacity-16};
+
+    --ncos-colour-state-layer-on-error-opacity-08: #{$ncos-colour-state-layer-on-error-opacity-08};
+    --ncos-colour-state-layer-on-error-opacity-12: #{$ncos-colour-state-layer-on-error-opacity-12};
+    --ncos-colour-state-layer-on-error-opacity-16: #{$ncos-colour-state-layer-on-error-opacity-16};
+
+    --ncos-colour-state-layer-success-opacity-08: #{$ncos-colour-state-layer-success-opacity-08};
+    --ncos-colour-state-layer-success-opacity-12: #{$ncos-colour-state-layer-success-opacity-12};
+    --ncos-colour-state-layer-success-opacity-16: #{$ncos-colour-state-layer-success-opacity-16};
+
+    --ncos-colour-state-layer-on-success-opacity-08: #{$ncos-colour-state-layer-on-success-opacity-08};
+    --ncos-colour-state-layer-on-success-opacity-12: #{$ncos-colour-state-layer-on-success-opacity-12};
+    --ncos-colour-state-layer-on-success-opacity-16: #{$ncos-colour-state-layer-on-success-opacity-16};
+
+    --ncos-colour-state-layer-surface-opacity-08: #{$ncos-colour-state-layer-surface-opacity-08};
+    --ncos-colour-state-layer-surface-opacity-12: #{$ncos-colour-state-layer-surface-opacity-12};
+    --ncos-colour-state-layer-surface-opacity-16: #{$ncos-colour-state-layer-surface-opacity-16};
+
+    --ncos-colour-state-layer-surface-bridge-opacity-08: #{$ncos-colour-state-layer-surface-bridge-opacity-08};
+    --ncos-colour-state-layer-surface-bridge-opacity-12: #{$ncos-colour-state-layer-surface-bridge-opacity-12};
+    --ncos-colour-state-layer-surface-bridge-opacity-16: #{$ncos-colour-state-layer-surface-bridge-opacity-16};
+
+    --ncos-colour-state-layer-surface-bridge-alt-opacity-08: #{$ncos-colour-state-layer-surface-bridge-alt-opacity-08};
+    --ncos-colour-state-layer-surface-bridge-alt-opacity-12: #{$ncos-colour-state-layer-surface-bridge-alt-opacity-12};
+    --ncos-colour-state-layer-surface-bridge-alt-opacity-16: #{$ncos-colour-state-layer-surface-bridge-alt-opacity-16};
+
+    --ncos-colour-state-layer-on-surface-opacity-08: #{$ncos-colour-state-layer-on-surface-opacity-08};
+    --ncos-colour-state-layer-on-surface-opacity-12: #{$ncos-colour-state-layer-on-surface-opacity-12};
+    --ncos-colour-state-layer-on-surface-opacity-16: #{$ncos-colour-state-layer-on-surface-opacity-16};
+
+    --ncos-colour-state-layer-on-surface-alt-opacity-08: #{$ncos-colour-state-layer-on-surface-alt-opacity-08};
+    --ncos-colour-state-layer-on-surface-alt-opacity-12: #{$ncos-colour-state-layer-on-surface-alt-opacity-12};
+    --ncos-colour-state-layer-on-surface-alt-opacity-16: #{$ncos-colour-state-layer-on-surface-alt-opacity-16};
+
+    --ncos-colour-state-layer-surface-container-low-opacity-08: #{$ncos-colour-state-layer-surface-container-low-opacity-08};
+    --ncos-colour-state-layer-surface-container-low-opacity-12: #{$ncos-colour-state-layer-surface-container-low-opacity-12};
+    --ncos-colour-state-layer-surface-container-low-opacity-16: #{$ncos-colour-state-layer-surface-container-low-opacity-16};
+
+    --ncos-colour-state-layer-surface-container-opacity-08: #{$ncos-colour-state-layer-surface-container-opacity-08};
+    --ncos-colour-state-layer-surface-container-opacity-12: #{$ncos-colour-state-layer-surface-container-opacity-12};
+    --ncos-colour-state-layer-surface-container-opacity-16: #{$ncos-colour-state-layer-surface-container-opacity-16};
+
+    --ncos-colour-state-layer-surface-container-high-opacity-08: #{$ncos-colour-state-layer-surface-container-high-opacity-08};
+    --ncos-colour-state-layer-surface-container-high-opacity-12: #{$ncos-colour-state-layer-surface-container-high-opacity-12};
+    --ncos-colour-state-layer-surface-container-high-opacity-16: #{$ncos-colour-state-layer-surface-container-high-opacity-16};
+
+    --ncos-colour-state-layer-contrast-surface-opacity-08: #{$ncos-colour-state-layer-contrast-surface-opacity-08};
+    --ncos-colour-state-layer-contrast-surface-opacity-12: #{$ncos-colour-state-layer-contrast-surface-opacity-12};
+    --ncos-colour-state-layer-contrast-surface-opacity-16: #{$ncos-colour-state-layer-contrast-surface-opacity-16};
+
+    --ncos-colour-state-layer-on-contrast-surface-opacity-08: #{$ncos-colour-state-layer-on-contrast-surface-opacity-08};
+    --ncos-colour-state-layer-on-contrast-surface-opacity-12: #{$ncos-colour-state-layer-on-contrast-surface-opacity-12};
+    --ncos-colour-state-layer-on-contrast-surface-opacity-16: #{$ncos-colour-state-layer-on-contrast-surface-opacity-16};
 }
