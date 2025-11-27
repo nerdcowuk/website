@@ -6,11 +6,12 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@wordpress/block-serialization-default-parser": "^5.34.0",
-    "axios": "^1.12.2",
+    "axios": "^1.13.2",
     "classnames": "^2.5.1",
     "html-react-parser": "^5.2.7",
     "next": "15.5.5",
@@ -27,6 +28,7 @@
     "@types/sanitize-html": "^2.16.0",
     "eslint": "^9",
     "eslint-config-next": "15.5.5",
+    "patch-package": "^8.0.1",
     "typescript": "^5"
   }
 }
