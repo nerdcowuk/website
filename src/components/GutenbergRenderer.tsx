@@ -1,6 +1,7 @@
 // src/components/GutenbergRenderer.tsx
 'use client';
 
+import React from 'react';
 import { getBlockComponent } from '../lib/block-registry';
 import parse, { domToReact, HTMLReactParserOptions, Element } from 'html-react-parser';
 
@@ -38,7 +39,7 @@ export function GutenbergRenderer({ blocks }: GutenbergRendererProps) {
 
         // Special handling for text blocks - render innerHTML directly to preserve WordPress classes
         if (block.name === 'ncos/text' && block.innerHTML) {
-            return <div key={`${block.name}-${index}`}>{extractTextContent(block.innerHTML)}</div>;
+            return <React.Fragment key={`${block.name}-${index}`}>{extractTextContent(block.innerHTML)}</React.Fragment>;
         }
 
         const BlockComponent = getBlockComponent(block.name);
