@@ -3,6 +3,7 @@
 
 import { getBlockComponent } from '../lib/block-registry';
 import parse, { domToReact, HTMLReactParserOptions, Element } from 'html-react-parser';
+import Text from './blocks/Text/Text';
 
 interface GutenbergBlock {
     name: string;
@@ -16,12 +17,30 @@ interface GutenbergRendererProps {
 }
 
 // Extract inner content from HTML string for text blocks
+// Recursively applies Text component to nested inline elements
 function extractTextContent(innerHTML: string): React.ReactNode {
+    // Inline elements that should be wrapped with Text component
+    const inlineElements = ['a', 'strong', 'em', 'span', 'b', 'i', 'u', 'mark', 'code', 'abbr', 'cite', 'del', 'ins', 'kbd', 'sub', 'sup', 's', 'small'];
+
     const options: HTMLReactParserOptions = {
         replace: (domNode) => {
-            // If it's the root element (ncos-text), extract only its children
-            if (domNode instanceof Element && domNode.attribs?.class?.includes('ncos-text')) {
-                return <>{domToReact(domNode.children as any, options)}</>;
+            if (domNode instanceof Element) {
+                // If it's the root element (ncos-text), recursively process its children
+                if (domNode.attribs?.class?.includes('ncos-text')) {
+                    return <>{domToReact(domNode.children as any, options)}</>;
+                }
+
+                // For inline elements, wrap them in Text component
+                if (inlineElements.includes(domNode.name)) {
+                    // Extract props from attributes
+                    const { class: className, ...otherAttribs } = domNode.attribs || {};
+
+                    return (
+                        <Text as={domNode.name} className={className} {...otherAttribs}>
+                            {domToReact(domNode.children as any, options)}
+                        </Text>
+                    );
+                }
             }
         }
     };
@@ -41,7 +60,7 @@ export function GutenbergRenderer({ blocks }: GutenbergRendererProps) {
             const { attrs, innerBlocks } = block;
 
             // Filter out backend-only attrs
-            let filteredAttrs = Object.fromEntries(
+            const filteredAttrs = Object.fromEntries(
                 Object.entries(attrs).filter(([key]) => !['lock', 'metadata'].includes(key))
             );
 
