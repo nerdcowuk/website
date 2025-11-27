@@ -16,19 +16,21 @@ interface GutenbergRendererProps {
     blocks: GutenbergBlock[];
 }
 
-// Extract inner content from HTML string for text blocks
-function extractTextContent(innerHTML: string): React.ReactNode {
-    const options: HTMLReactParserOptions = {
-        replace: (domNode) => {
-            // Remove empty class attributes from all elements
-            if (domNode instanceof Element && domNode.attribs?.class === '') {
-                const { class: _, ...restAttribs } = domNode.attribs;
-                domNode.attribs = restAttribs;
-            }
-        }
-    };
+// Extract tag, classes, and content from text block innerHTML
+function extractTextBlockData(innerHTML: string): { tag: string; className: string; content: React.ReactNode } | null {
+    const parsedElement = parse(innerHTML);
 
-    return parse(innerHTML, options);
+    // If we got a single React element, extract its props
+    if (React.isValidElement(parsedElement)) {
+        const element = parsedElement as React.ReactElement;
+        return {
+            tag: typeof element.type === 'string' ? element.type : 'p',
+            className: element.props.className || '',
+            content: element.props.children
+        };
+    }
+
+    return null;
 }
 
 export function GutenbergRenderer({ blocks }: GutenbergRendererProps) {
@@ -37,9 +39,25 @@ export function GutenbergRenderer({ blocks }: GutenbergRendererProps) {
             return null;
         }
 
-        // Special handling for text blocks - render innerHTML directly to preserve WordPress classes
+        // Special handling for text blocks - extract WordPress classes and pass to Text component
         if (block.name === 'ncos/text' && block.innerHTML) {
-            return <React.Fragment key={`${block.name}-${index}`}>{extractTextContent(block.innerHTML)}</React.Fragment>;
+            const textData = extractTextBlockData(block.innerHTML);
+            if (textData) {
+                const BlockComponent = getBlockComponent(block.name);
+                if (BlockComponent) {
+                    return (
+                        <BlockComponent
+                            key={`${block.name}-${index}`}
+                            tag={textData.tag}
+                            className={textData.className}
+                        >
+                            {textData.content}
+                        </BlockComponent>
+                    );
+                }
+            }
+            // Fallback if extraction fails
+            return <React.Fragment key={`${block.name}-${index}`}>{parse(block.innerHTML)}</React.Fragment>;
         }
 
         const BlockComponent = getBlockComponent(block.name);
