@@ -19,11 +19,6 @@ interface GutenbergRendererProps {
 function extractTextContent(innerHTML: string): React.ReactNode {
     const options: HTMLReactParserOptions = {
         replace: (domNode) => {
-            // If it's the root element (ncos-text), extract only its children
-            if (domNode instanceof Element && domNode.attribs?.class?.includes('ncos-text')) {
-                return <>{domToReact(domNode.children as any, options)}</>;
-            }
-
             // Remove empty class attributes from all elements
             if (domNode instanceof Element && domNode.attribs?.class === '') {
                 const { class: _, ...restAttribs } = domNode.attribs;
@@ -39,6 +34,11 @@ export function GutenbergRenderer({ blocks }: GutenbergRendererProps) {
     const renderBlock = (block: GutenbergBlock, index: number): React.ReactNode => {
         if (!block.name) {
             return null;
+        }
+
+        // Special handling for text blocks - render innerHTML directly to preserve WordPress classes
+        if (block.name === 'ncos/text' && block.innerHTML) {
+            return <div key={`${block.name}-${index}`}>{extractTextContent(block.innerHTML)}</div>;
         }
 
         const BlockComponent = getBlockComponent(block.name);
@@ -59,9 +59,6 @@ export function GutenbergRenderer({ blocks }: GutenbergRendererProps) {
             if (!isLeafBlock) {
                 // Has inner blocks - render them recursively
                 children = <GutenbergRenderer blocks={innerBlocks} />;
-            } else if (block.name === 'ncos/text' && block.innerHTML) {
-                // Text blocks: extract inner content from innerHTML
-                children = extractTextContent(block.innerHTML);
             } else if (attrs.children) {
                 // Use attrs.children if available (e.g., for buttons)
                 children = attrs.children;
