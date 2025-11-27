@@ -17,7 +17,6 @@ export default function Box({
     as: Tag = 'section',
     className,
     children,
-    theme,
     width,
     gutters,
     ...restProps
@@ -25,9 +24,8 @@ export default function Box({
     const classNames = cn(
         styles.box,
         className,
-        theme && styles[`box--theme-${theme}`],
-        width && styles[`box--maxWidth-${width}`],
-        gutters === false && styles['box--disableGutters']
+        width && styles[`box--max-width-${width}`],
+        gutters === false && styles['box--disable-gutters']
     );
 
     return (

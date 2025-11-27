@@ -4,12 +4,19 @@
 
 @use '../tokens' as *;
 
-html {
-	font-size: 16px;
+body {
+	font-family: var(--ncos-text-body-lg-large-font-family);
+    font-size: var(--ncos-text-body-lg-large-font-size);
+    font-weight: var(--ncos-text-body-lg-large-font-weight);
+    letter-spacing: var(--ncos-text-body-lg-large-font-letter-spacing);
+    line-height: var(--ncos-text-body-lg-large-font-line-height);
+	color: var(--ncos-colour-sys-on-surface-alt);
+	background: var(--ncos-colour-sys-surface);
 }
 
-body {
-	background: var(--ncos-colour-sys-surface);
+article {
+	max-width: 750px;
+	margin: 0 auto;
 }
 
 a {

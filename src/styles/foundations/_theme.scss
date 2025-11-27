@@ -5,6 +5,8 @@
 @use '../tokens' as *;
 
 :root {
+
+    // Colours
     --ncos-colour-sys-primary: #{$ncos-colour-sys-primary};
     --ncos-colour-sys-on-primary: #{$ncos-colour-sys-on-primary};
 
@@ -162,4 +164,209 @@
     --ncos-colour-state-layer-on-contrast-surface-opacity-08: #{$ncos-colour-state-layer-on-contrast-surface-opacity-08};
     --ncos-colour-state-layer-on-contrast-surface-opacity-12: #{$ncos-colour-state-layer-on-contrast-surface-opacity-12};
     --ncos-colour-state-layer-on-contrast-surface-opacity-16: #{$ncos-colour-state-layer-on-contrast-surface-opacity-16};
+
+    // Typography
+    --ncos-text-display-large-font-family: #{$ncos-text-display-large-font-family};
+    --ncos-text-display-large-font-size: #{$ncos-text-display-large-font-size};
+    --ncos-text-display-large-font-weight: #{$ncos-text-display-large-font-weight};
+    --ncos-text-display-large-font-letter-spacing: #{$ncos-text-display-large-font-letter-spacing};
+    --ncos-text-display-large-font-line-height: #{$ncos-text-display-large-font-line-height};
+
+    --ncos-text-display-medium-font-family: #{$ncos-text-display-medium-font-family};
+    --ncos-text-display-medium-font-size: #{$ncos-text-display-medium-font-size};
+    --ncos-text-display-medium-font-weight: #{$ncos-text-display-medium-font-weight};
+    --ncos-text-display-medium-font-letter-spacing: #{$ncos-text-display-medium-font-letter-spacing};
+    --ncos-text-display-medium-font-line-height: #{$ncos-text-display-medium-font-line-height};
+
+    --ncos-text-display-small-font-family: #{$ncos-text-display-small-font-family};
+    --ncos-text-display-small-font-size: #{$ncos-text-display-small-font-size};
+    --ncos-text-display-small-font-weight: #{$ncos-text-display-small-font-weight};
+    --ncos-text-display-small-font-letter-spacing: #{$ncos-text-display-small-font-letter-spacing};
+    --ncos-text-display-small-font-line-height: #{$ncos-text-display-small-font-line-height};
+
+    --ncos-text-heading-2xl-large-font-family: #{$ncos-text-heading-2xl-large-font-family};
+    --ncos-text-heading-2xl-large-font-size: #{$ncos-text-heading-2xl-large-font-size};
+    --ncos-text-heading-2xl-large-font-weight: #{$ncos-text-heading-2xl-large-font-weight};
+    --ncos-text-heading-2xl-large-font-letter-spacing: #{$ncos-text-heading-2xl-large-font-letter-spacing};
+    --ncos-text-heading-2xl-large-font-line-height: #{$ncos-text-heading-2xl-large-font-line-height};
+
+    --ncos-text-heading-2xl-medium-font-family: #{$ncos-text-heading-2xl-medium-font-family};
+    --ncos-text-heading-2xl-medium-font-size: #{$ncos-text-heading-2xl-medium-font-size};
+    --ncos-text-heading-2xl-medium-font-weight: #{$ncos-text-heading-2xl-medium-font-weight};
+    --ncos-text-heading-2xl-medium-font-letter-spacing: #{$ncos-text-heading-2xl-medium-font-letter-spacing};
+    --ncos-text-heading-2xl-medium-font-line-height: #{$ncos-text-heading-2xl-medium-font-line-height};
+
+    --ncos-text-heading-2xl-small-font-family: #{$ncos-text-heading-2xl-small-font-family};
+    --ncos-text-heading-2xl-small-font-size: #{$ncos-text-heading-2xl-small-font-size};
+    --ncos-text-heading-2xl-small-font-weight: #{$ncos-text-heading-2xl-small-font-weight};
+    --ncos-text-heading-2xl-small-font-letter-spacing: #{$ncos-text-heading-2xl-small-font-letter-spacing};
+    --ncos-text-heading-2xl-small-font-line-height: #{$ncos-text-heading-2xl-small-font-line-height};
+
+    --ncos-text-heading-xl-large-font-family: #{$ncos-text-heading-xl-large-font-family};
+    --ncos-text-heading-xl-large-font-size: #{$ncos-text-heading-xl-large-font-size};
+    --ncos-text-heading-xl-large-font-weight: #{$ncos-text-heading-xl-large-font-weight};
+    --ncos-text-heading-xl-large-font-letter-spacing: #{$ncos-text-heading-xl-large-font-letter-spacing};
+    --ncos-text-heading-xl-large-font-line-height: #{$ncos-text-heading-xl-large-font-line-height};
+
+    --ncos-text-heading-xl-medium-font-family: #{$ncos-text-heading-xl-medium-font-family};
+    --ncos-text-heading-xl-medium-font-size: #{$ncos-text-heading-xl-medium-font-size};
+    --ncos-text-heading-xl-medium-font-weight: #{$ncos-text-heading-xl-medium-font-weight};
+    --ncos-text-heading-xl-medium-font-letter-spacing: #{$ncos-text-heading-xl-medium-font-letter-spacing};
+    --ncos-text-heading-xl-medium-font-line-height: #{$ncos-text-heading-xl-medium-font-line-height};
+
+    --ncos-text-heading-xl-small-font-family: #{$ncos-text-heading-xl-small-font-family};
+    --ncos-text-heading-xl-small-font-size: #{$ncos-text-heading-xl-small-font-size};
+    --ncos-text-heading-xl-small-font-weight: #{$ncos-text-heading-xl-small-font-weight};
+    --ncos-text-heading-xl-small-font-letter-spacing: #{$ncos-text-heading-xl-small-font-letter-spacing};
+    --ncos-text-heading-xl-small-font-line-height: #{$ncos-text-heading-xl-small-font-line-height};
+
+    --ncos-text-heading-lg-large-font-family: #{$ncos-text-heading-lg-large-font-family};
+    --ncos-text-heading-lg-large-font-size: #{$ncos-text-heading-lg-large-font-size};
+    --ncos-text-heading-lg-large-font-weight: #{$ncos-text-heading-lg-large-font-weight};
+    --ncos-text-heading-lg-large-font-letter-spacing: #{$ncos-text-heading-lg-large-font-letter-spacing};
+    --ncos-text-heading-lg-large-font-line-height: #{$ncos-text-heading-lg-large-font-line-height};
+
+    --ncos-text-heading-lg-medium-font-family: #{$ncos-text-heading-lg-medium-font-family};
+    --ncos-text-heading-lg-medium-font-size: #{$ncos-text-heading-lg-medium-font-size};
+    --ncos-text-heading-lg-medium-font-weight: #{$ncos-text-heading-lg-medium-font-weight};
+    --ncos-text-heading-lg-medium-font-letter-spacing: #{$ncos-text-heading-lg-medium-font-letter-spacing};
+    --ncos-text-heading-lg-medium-font-line-height: #{$ncos-text-heading-lg-medium-font-line-height};
+
+    --ncos-text-heading-lg-small-font-family: #{$ncos-text-heading-lg-small-font-family};
+    --ncos-text-heading-lg-small-font-size: #{$ncos-text-heading-lg-small-font-size};
+    --ncos-text-heading-lg-small-font-weight: #{$ncos-text-heading-lg-small-font-weight};
+    --ncos-text-heading-lg-small-font-letter-spacing: #{$ncos-text-heading-lg-small-font-letter-spacing};
+    --ncos-text-heading-lg-small-font-line-height: #{$ncos-text-heading-lg-small-font-line-height};
+
+    --ncos-text-heading-md-large-font-family: #{$ncos-text-heading-md-large-font-family};
+    --ncos-text-heading-md-large-font-size: #{$ncos-text-heading-md-large-font-size};
+    --ncos-text-heading-md-large-font-weight: #{$ncos-text-heading-md-large-font-weight};
+    --ncos-text-heading-md-large-font-letter-spacing: #{$ncos-text-heading-md-large-font-letter-spacing};
+    --ncos-text-heading-md-large-font-line-height: #{$ncos-text-heading-md-large-font-line-height};
+
+    --ncos-text-heading-md-medium-font-family: #{$ncos-text-heading-md-medium-font-family};
+    --ncos-text-heading-md-medium-font-size: #{$ncos-text-heading-md-medium-font-size};
+    --ncos-text-heading-md-medium-font-weight: #{$ncos-text-heading-md-medium-font-weight};
+    --ncos-text-heading-md-medium-font-letter-spacing: #{$ncos-text-heading-md-medium-font-letter-spacing};
+    --ncos-text-heading-md-medium-font-line-height: #{$ncos-text-heading-md-medium-font-line-height};
+
+    --ncos-text-heading-md-small-font-family: #{$ncos-text-heading-md-small-font-family};
+    --ncos-text-heading-md-small-font-size: #{$ncos-text-heading-md-small-font-size};
+    --ncos-text-heading-md-small-font-weight: #{$ncos-text-heading-md-small-font-weight};
+    --ncos-text-heading-md-small-font-letter-spacing: #{$ncos-text-heading-md-small-font-letter-spacing};
+    --ncos-text-heading-md-small-font-line-height: #{$ncos-text-heading-md-small-font-line-height};
+
+    --ncos-text-heading-sm-large-font-family: #{$ncos-text-heading-sm-large-font-family};
+    --ncos-text-heading-sm-large-font-size: #{$ncos-text-heading-sm-large-font-size};
+    --ncos-text-heading-sm-large-font-weight: #{$ncos-text-heading-sm-large-font-weight};
+    --ncos-text-heading-sm-large-font-letter-spacing: #{$ncos-text-heading-sm-large-font-letter-spacing};
+    --ncos-text-heading-sm-large-font-line-height: #{$ncos-text-heading-sm-large-font-line-height};
+
+    --ncos-text-heading-sm-medium-font-family: #{$ncos-text-heading-sm-medium-font-family};
+    --ncos-text-heading-sm-medium-font-size: #{$ncos-text-heading-sm-medium-font-size};
+    --ncos-text-heading-sm-medium-font-weight: #{$ncos-text-heading-sm-medium-font-weight};
+    --ncos-text-heading-sm-medium-font-letter-spacing: #{$ncos-text-heading-sm-medium-font-letter-spacing};
+    --ncos-text-heading-sm-medium-font-line-height: #{$ncos-text-heading-sm-medium-font-line-height};
+
+    --ncos-text-heading-sm-small-font-family: #{$ncos-text-heading-sm-small-font-family};
+    --ncos-text-heading-sm-small-font-size: #{$ncos-text-heading-sm-small-font-size};
+    --ncos-text-heading-sm-small-font-weight: #{$ncos-text-heading-sm-small-font-weight};
+    --ncos-text-heading-sm-small-font-letter-spacing: #{$ncos-text-heading-sm-small-font-letter-spacing};
+    --ncos-text-heading-sm-small-font-line-height: #{$ncos-text-heading-sm-small-font-line-height};
+
+    --ncos-text-body-lg-large-font-family: #{$ncos-text-body-lg-large-font-family};
+    --ncos-text-body-lg-large-font-size: #{$ncos-text-body-lg-large-font-size};
+    --ncos-text-body-lg-large-font-weight: #{$ncos-text-body-lg-large-font-weight};
+    --ncos-text-body-lg-large-font-letter-spacing: #{$ncos-text-body-lg-large-font-letter-spacing};
+    --ncos-text-body-lg-large-font-line-height: #{$ncos-text-body-lg-large-font-line-height};
+
+    --ncos-text-body-lg-large-bold-font-family: #{$ncos-text-body-lg-large-bold-font-family};
+    --ncos-text-body-lg-large-bold-font-size: #{$ncos-text-body-lg-large-bold-font-size};
+    --ncos-text-body-lg-large-bold-font-weight: #{$ncos-text-body-lg-large-bold-font-weight};
+    --ncos-text-body-lg-large-bold-font-letter-spacing: #{$ncos-text-body-lg-large-bold-font-letter-spacing};
+    --ncos-text-body-lg-large-bold-font-line-height: #{$ncos-text-body-lg-large-bold-font-line-height};
+
+    --ncos-text-body-lg-medium-font-family: #{$ncos-text-body-lg-medium-font-family};
+    --ncos-text-body-lg-medium-font-size: #{$ncos-text-body-lg-medium-font-size};
+    --ncos-text-body-lg-medium-font-weight: #{$ncos-text-body-lg-medium-font-weight};
+    --ncos-text-body-lg-medium-font-letter-spacing: #{$ncos-text-body-lg-medium-font-letter-spacing};
+    --ncos-text-body-lg-medium-font-line-height: #{$ncos-text-body-lg-medium-font-line-height};
+
+    --ncos-text-body-lg-small-font-family: #{$ncos-text-body-lg-small-font-family};
+    --ncos-text-body-lg-small-font-size: #{$ncos-text-body-lg-small-font-size};
+    --ncos-text-body-lg-small-font-weight: #{$ncos-text-body-lg-small-font-weight};
+    --ncos-text-body-lg-small-font-letter-spacing: #{$ncos-text-body-lg-small-font-letter-spacing};
+    --ncos-text-body-lg-small-font-line-height: #{$ncos-text-body-lg-small-font-line-height};
+
+    --ncos-text-body-lg-small-bold-font-family: #{$ncos-text-body-lg-small-bold-font-family};
+    --ncos-text-body-lg-small-bold-font-size: #{$ncos-text-body-lg-small-bold-font-size};
+    --ncos-text-body-lg-small-bold-font-weight: #{$ncos-text-body-lg-small-bold-font-weight};
+    --ncos-text-body-lg-small-bold-font-letter-spacing: #{$ncos-text-body-lg-small-bold-font-letter-spacing};
+    --ncos-text-body-lg-small-bold-font-line-height: #{$ncos-text-body-lg-small-bold-font-line-height};
+
+    --ncos-text-body-md-large-font-family: #{$ncos-text-body-md-large-font-family};
+    --ncos-text-body-md-large-font-size: #{$ncos-text-body-md-large-font-size};
+    --ncos-text-body-md-large-font-weight: #{$ncos-text-body-md-large-font-weight};
+    --ncos-text-body-md-large-font-letter-spacing: #{$ncos-text-body-md-large-font-letter-spacing};
+    --ncos-text-body-md-large-font-line-height: #{$ncos-text-body-md-large-font-line-height};
+
+    --ncos-text-body-md-large-bold-font-family: #{$ncos-text-body-md-large-bold-font-family};
+    --ncos-text-body-md-large-bold-font-size: #{$ncos-text-body-md-large-bold-font-size};
+    --ncos-text-body-md-large-bold-font-weight: #{$ncos-text-body-md-large-bold-font-weight};
+    --ncos-text-body-md-large-bold-font-letter-spacing: #{$ncos-text-body-md-large-bold-font-letter-spacing};
+    --ncos-text-body-md-large-bold-font-line-height: #{$ncos-text-body-md-large-bold-font-line-height};
+
+    --ncos-text-body-md-medium-font-family: #{$ncos-text-body-md-medium-font-family};
+    --ncos-text-body-md-medium-font-size: #{$ncos-text-body-md-medium-font-size};
+    --ncos-text-body-md-medium-font-weight: #{$ncos-text-body-md-medium-font-weight};
+    --ncos-text-body-md-medium-font-letter-spacing: #{$ncos-text-body-md-medium-font-letter-spacing};
+    --ncos-text-body-md-medium-font-line-height: #{$ncos-text-body-md-medium-font-line-height};
+
+    --ncos-text-body-md-small-font-family: #{$ncos-text-body-md-small-font-family};
+    --ncos-text-body-md-small-font-size: #{$ncos-text-body-md-small-font-size};
+    --ncos-text-body-md-small-font-weight: #{$ncos-text-body-md-small-font-weight};
+    --ncos-text-body-md-small-font-letter-spacing: #{$ncos-text-body-md-small-font-letter-spacing};
+    --ncos-text-body-md-small-font-line-height: #{$ncos-text-body-md-small-font-line-height};
+
+    --ncos-text-body-md-small-bold-font-family: #{$ncos-text-body-md-small-bold-font-family};
+    --ncos-text-body-md-small-bold-font-size: #{$ncos-text-body-md-small-bold-font-size};
+    --ncos-text-body-md-small-bold-font-weight: #{$ncos-text-body-md-small-bold-font-weight};
+    --ncos-text-body-md-small-bold-font-letter-spacing: #{$ncos-text-body-md-small-bold-font-letter-spacing};
+    --ncos-text-body-md-small-bold-font-line-height: #{$ncos-text-body-md-small-bold-font-line-height};
+
+    --ncos-text-body-sm-large-font-family: #{$ncos-text-body-sm-large-font-family};
+    --ncos-text-body-sm-large-font-size: #{$ncos-text-body-sm-large-font-size};
+    --ncos-text-body-sm-large-font-weight: #{$ncos-text-body-sm-large-font-weight};
+    --ncos-text-body-sm-large-font-letter-spacing: #{$ncos-text-body-sm-large-font-letter-spacing};
+    --ncos-text-body-sm-large-font-line-height: #{$ncos-text-body-sm-large-font-line-height};
+
+    --ncos-text-body-sm-medium-font-family: #{$ncos-text-body-sm-medium-font-family};
+    --ncos-text-body-sm-medium-font-size: #{$ncos-text-body-sm-medium-font-size};
+    --ncos-text-body-sm-medium-font-weight: #{$ncos-text-body-sm-medium-font-weight};
+    --ncos-text-body-sm-medium-font-letter-spacing: #{$ncos-text-body-sm-medium-font-letter-spacing};
+    --ncos-text-body-sm-medium-font-line-height: #{$ncos-text-body-sm-medium-font-line-height};
+
+    --ncos-text-body-sm-small-font-family: #{$ncos-text-body-sm-small-font-family};
+    --ncos-text-body-sm-small-font-size: #{$ncos-text-body-sm-small-font-size};
+    --ncos-text-body-sm-small-font-weight: #{$ncos-text-body-sm-small-font-weight};
+    --ncos-text-body-sm-small-font-letter-spacing: #{$ncos-text-body-sm-small-font-letter-spacing};
+    --ncos-text-body-sm-small-font-line-height: #{$ncos-text-body-sm-small-font-line-height};
+    
+    --ncos-text-label-large-font-family: #{$ncos-text-label-large-font-family};
+    --ncos-text-label-large-font-size: #{$ncos-text-label-large-font-size};
+    --ncos-text-label-large-font-weight: #{$ncos-text-label-large-font-weight};
+    --ncos-text-label-large-font-letter-spacing: #{$ncos-text-label-large-font-letter-spacing};
+    --ncos-text-label-large-font-line-height: #{$ncos-text-label-large-font-line-height};
+
+    --ncos-text-label-medium-font-family: #{$ncos-text-label-medium-font-family};
+    --ncos-text-label-medium-font-size: #{$ncos-text-label-medium-font-size};
+    --ncos-text-label-medium-font-weight: #{$ncos-text-label-medium-font-weight};
+    --ncos-text-label-medium-font-letter-spacing: #{$ncos-text-label-medium-font-letter-spacing};
+    --ncos-text-label-medium-font-line-height: #{$ncos-text-label-medium-font-line-height};
+
+    --ncos-text-label-small-font-family: #{$ncos-text-label-small-font-family};
+    --ncos-text-label-small-font-size: #{$ncos-text-label-small-font-size};
+    --ncos-text-label-small-font-weight: #{$ncos-text-label-small-font-weight};
+    --ncos-text-label-small-font-letter-spacing: #{$ncos-text-label-small-font-letter-spacing};
+    --ncos-text-label-small-font-line-height: #{$ncos-text-label-small-font-line-height};
 }

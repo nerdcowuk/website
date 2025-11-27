@@ -44,6 +44,6 @@ export default function Text({
     }) : children;
 
     return (
-        <Tag className={classNames} {...props}>{cleanContent}</Tag>
+        <Tag className={classNames} {...props}>#{cleanContent}</Tag>
     );
 }

@@ -14,7 +14,12 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body>
-				{children}
+				<div id="page">
+					{/* Header will come here like navigation, announcements, etc */}
+					<main id="content">
+						{children}
+					</main>
+				</div>
 			</body>
 		</html>
 	);
