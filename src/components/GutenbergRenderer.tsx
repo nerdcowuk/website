@@ -6,10 +6,10 @@ import { normalizeBlockName } from '../lib/normalize-block-name';
 import parse from 'html-react-parser';
 
 interface GutenbergBlock {
-    blockName: string | null;
+    name: string;
     attrs: Record<string, any>;
     innerBlocks: GutenbergBlock[];
-    innerContent: string[];
+    innerHTML: string;
 }
 
 interface GutenbergRendererProps {
@@ -17,42 +17,37 @@ interface GutenbergRendererProps {
 }
 
 export function GutenbergRenderer({ blocks }: GutenbergRendererProps) {
-
-    const renderBlock = (block: GutenbergBlock, index: number) => {
-        if (!block.blockName) {
+    const renderBlock = (block: GutenbergBlock, index: number): React.ReactNode => {
+        if (!block.name) {
             return null;
         }
 
-        const normalizedName = normalizeBlockName(block.blockName);
-        const BlockComponent = getBlockComponent(block.blockName);
+        const normalizedName = normalizeBlockName(block.name); // ← now uses block.name
+        const BlockComponent = getBlockComponent(block.name);
 
         if (BlockComponent) {
-            const { attrs, innerBlocks, innerContent } = block;
+            const { attrs, innerBlocks } = block;
 
-            // Filter backend-specific attributes
+            // Filter out backend-only attrs (your original logic)
             const filteredAttrs = Object.fromEntries(
                 Object.entries(attrs).filter(([key]) => !['lock', 'metadata'].includes(key))
             );
 
-            // Leaf blocks get children from innerContent; containers get innerBlocks
             const isLeafBlock = innerBlocks.length === 0;
-            const props: Record<string, any> = {
-                ...filteredAttrs
-            };
 
             return (
-                <BlockComponent key={`${block.blockName}-${index}`} {...props}>
-                {
-                    !isLeafBlock
-                        ? <GutenbergRenderer blocks={innerBlocks} />
-                        : innerContent?.[0] && (
-                            parse( innerContent[0] )
-                        )
-                }
+                <BlockComponent key={`${block.name}-${index}`} {...filteredAttrs}>
+                    {!isLeafBlock ? (
+                        <GutenbergRenderer blocks={innerBlocks} />
+                    ) : block.innerHTML ? (
+                        parse(block.innerHTML)   // ← your parse() stays exactly where you had it
+                    ) : null}
                 </BlockComponent>
             );
         }
-        return null;
+
+        // Fallback for unknown blocks – still uses your beloved parse()
+        return block.innerHTML ? parse(block.innerHTML) : null;
     };
 
     return (
