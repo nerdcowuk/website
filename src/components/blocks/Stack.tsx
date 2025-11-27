@@ -1,10 +1,17 @@
 import cn from 'classnames';
 
 interface StackProps {
+    as?: string | React.ComponentType<any>;
     className?: string;
     metadata?: any;
     innerBlocks?: any[];
     children?: React.ReactNode;
+    direction?: string;
+    spacing?: number;
+    align?: string;
+    justify?: string;
+    wrap?: boolean;
+    [key: string]: any;
 }
 
 export default function Stack({ 

@@ -2,7 +2,6 @@
 'use client';
 
 import { getBlockComponent } from '../lib/block-registry';
-import { normalizeBlockName } from '../lib/normalize-block-name';
 import parse from 'html-react-parser';
 
 interface GutenbergBlock {
@@ -22,7 +21,12 @@ export function GutenbergRenderer({ blocks }: GutenbergRendererProps) {
             return null;
         }
 
-        const normalizedName = normalizeBlockName(block.name); // ← now uses block.name
+        // For text blocks, render innerHTML directly without wrapper component
+        // The innerHTML already contains the complete HTML structure (h1, h2, p, etc.)
+        if (block.name === 'ncos/text' && block.innerHTML) {
+            return <div key={`${block.name}-${index}`}>{parse(block.innerHTML)}</div>;
+        }
+
         const BlockComponent = getBlockComponent(block.name);
 
         if (BlockComponent) {
