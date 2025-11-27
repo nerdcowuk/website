@@ -2,7 +2,8 @@
 'use client';
 
 import { getBlockComponent } from '../lib/block-registry';
-import parse, { domToReact, HTMLReactParserOptions, Element } from 'html-react-parser';
+import parse, { domToReact, HTMLReactParserOptions, Element, DOMNode } from 'html-react-parser';
+import Text from './blocks/Text/Text';
 
 interface GutenbergBlock {
     name: string;
@@ -15,13 +16,39 @@ interface GutenbergRendererProps {
     blocks: GutenbergBlock[];
 }
 
+// Inline text elements that should be wrapped in Text component
+const INLINE_TEXT_ELEMENTS = ['a', 'strong', 'em', 'span', 'b', 'i', 'u', 'mark', 'code', 'small', 'sub', 'sup'];
+
 // Extract inner content from HTML string for text blocks
 function extractTextContent(innerHTML: string): React.ReactNode {
     const options: HTMLReactParserOptions = {
         replace: (domNode) => {
+            if (!(domNode instanceof Element)) return;
+
             // If it's the root element (ncos-text), extract only its children
-            if (domNode instanceof Element && domNode.attribs?.class?.includes('ncos-text')) {
+            if (domNode.attribs?.class?.includes('ncos-text')) {
                 return <>{domToReact(domNode.children as any, options)}</>;
+            }
+
+            // Wrap inline text elements in Text component
+            if (INLINE_TEXT_ELEMENTS.includes(domNode.name)) {
+                const { class: className, ...otherAttribs } = domNode.attribs || {};
+
+                // Filter out ncos-text classes from inline elements, preserve custom classes
+                const filteredClassName = className
+                    ?.split(' ')
+                    .filter((cls: string) => !cls.includes('ncos-text'))
+                    .join(' ') || undefined;
+
+                return (
+                    <Text
+                        as={domNode.name}
+                        className={filteredClassName}
+                        {...otherAttribs}
+                    >
+                        {domToReact(domNode.children as DOMNode[], options)}
+                    </Text>
+                );
             }
         }
     };
@@ -41,7 +68,7 @@ export function GutenbergRenderer({ blocks }: GutenbergRendererProps) {
             const { attrs, innerBlocks } = block;
 
             // Filter out backend-only attrs
-            let filteredAttrs = Object.fromEntries(
+            const filteredAttrs = Object.fromEntries(
                 Object.entries(attrs).filter(([key]) => !['lock', 'metadata'].includes(key))
             );
 
