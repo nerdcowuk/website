@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Text from '@/components/blocks/Text/Text';
 
 interface Post {
 	id: number;
@@ -35,17 +36,14 @@ export default async function BlogListing() {
 
 	return (
 		<main>
-			<h1>Blog</h1>
-			<p>{posts.length} posts</p>
+			<Text as="h1">Blog</Text>
 
 			<ul>
 				{posts.map((post) => (
 					<li key={post.id}>
 						<Link href={`/blog/${post.slug}`}>
-							<h2>{post.title.rendered}</h2>
+							<Text>➡️ {post.title.rendered}</Text>
 						</Link>
-						<time>{new Date(post.date).toLocaleDateString()}</time>
-						<div dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} />
 					</li>
 				))}
 			</ul>
