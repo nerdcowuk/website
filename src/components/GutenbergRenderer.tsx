@@ -20,30 +20,44 @@ function parseTextAttributes(innerHTML: string): Record<string, any> {
     const match = innerHTML.match(/class="([^"]*)"/);
     if (!match) return {};
 
-    const classNames = match[1];
-    const classes = classNames.split(' ');
-    const attrs: Record<string, any> = {
-        className: classNames // Preserve all class names
-    };
+    const classes = match[1].split(' ').filter(Boolean);
+    const attrs: Record<string, any> = {};
+    const customClasses: string[] = [];
 
     for (const cls of classes) {
         // Parse align attribute: ncos-text--align-{value}
         const alignMatch = cls.match(/^ncos-text--align-(.+)$/);
         if (alignMatch) {
             attrs.align = alignMatch[1];
+            continue;
         }
 
         // Parse tag attribute: ncos-text--tag-{value}
         const tagMatch = cls.match(/^ncos-text--tag-(.+)$/);
         if (tagMatch) {
             attrs.tag = tagMatch[1];
+            continue;
         }
 
         // Parse preset attribute: ncos-text--preset-{value}
         const presetMatch = cls.match(/^ncos-text--preset-(.+)$/);
         if (presetMatch) {
             attrs.preset = presetMatch[1];
+            continue;
         }
+
+        // Skip base ncos-text class (Text component adds this)
+        if (cls === 'ncos-text') {
+            continue;
+        }
+
+        // Everything else is a custom class
+        customClasses.push(cls);
+    }
+
+    // Only add className if there are custom classes
+    if (customClasses.length > 0) {
+        attrs.className = customClasses.join(' ');
     }
 
     return attrs;
