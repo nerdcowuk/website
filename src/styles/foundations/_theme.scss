@@ -1,0 +1,13 @@
+// ============================================================================
+// Theme - CSS Variables Defining The Site Theme
+// ============================================================================
+
+@use '../tokens' as *;
+
+:root {
+    --ncos-colour-sys-surface: #{$ncos-colour-sys-surface};
+    --ncos-colour-sys-primary: #{$ncos-colour-sys-primary};
+    --ncos-colour-sys-on-primary: #{$ncos-colour-sys-on-primary};
+    --ncos-colour-sys-outline: #{$ncos-colour-sys-outline};
+    --ncos-colour-sys-secondary: #{$ncos-colour-sys-secondary};
+}
