@@ -25,6 +25,8 @@ export default function Text({
     // Use tag as the element if provided, otherwise use as, otherwise default to 'p'
     const Tag = (tag || as || 'p') as any;
 
+    console.log(Tag, props);
+
     const classNames = cn(
         styles[`ncos-text`],
         styles[`ncos-text--tag-${Tag}`],
@@ -32,8 +34,6 @@ export default function Text({
         align && styles[`ncos-text--align-${align}`],
         className
     );
-
-    console.log(classNames);
 
     // For non-string children (React nodes with HTML), don't sanitize
     // For string children, allow common inline formatting tags
