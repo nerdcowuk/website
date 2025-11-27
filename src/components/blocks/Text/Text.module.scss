@@ -1,6 +1,10 @@
 @use '@/styles/tokens' as *;
 
 .text {
+  // Default typography for blog content
+  font-family: $ncos-font-family-body;
+  color: var(--ncos-colour-sys-on-surface);
+
   // Alignment modifiers
   &--align-left {
     text-align: left;
@@ -12,5 +16,86 @@
 
   &--align-right {
     text-align: right;
+  }
+
+  // Tag-specific styles
+  &--tag-p {
+    font-size: $ncos-font-size-175;
+    line-height: $ncos-font-line-height-300;
+    margin-bottom: 1em;
+  }
+
+  &--tag-h1 {
+    font-size: $ncos-font-size-600;
+    font-weight: 700;
+    line-height: $ncos-font-line-height-650;
+    margin-bottom: 0.5em;
+  }
+
+  &--tag-h2 {
+    font-size: $ncos-font-size-500;
+    font-weight: 600;
+    line-height: $ncos-font-line-height-550;
+    margin-bottom: 0.5em;
+  }
+
+  &--tag-h3 {
+    font-size: $ncos-font-size-400;
+    font-weight: 600;
+    line-height: $ncos-font-line-height-450;
+    margin-bottom: 0.5em;
+  }
+
+  &--tag-h4 {
+    font-size: $ncos-font-size-300;
+    font-weight: 600;
+    line-height: $ncos-font-line-height-400;
+    margin-bottom: 0.5em;
+  }
+
+  &--tag-h5 {
+    font-size: $ncos-font-size-250;
+    font-weight: 600;
+    line-height: $ncos-font-line-height-400;
+    margin-bottom: 0.5em;
+  }
+
+  &--tag-h6 {
+    font-size: $ncos-font-size-200;
+    font-weight: 600;
+    line-height: $ncos-font-line-height-400;
+    margin-bottom: 0.5em;
+  }
+
+  // Ensure nested text elements inherit proper styling
+  p, ul, ol, blockquote {
+    font-size: $ncos-font-size-175;
+    line-height: $ncos-font-line-height-300;
+    margin-bottom: 1em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul, ol {
+    padding-left: 1.5em;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  a {
+    color: var(--ncos-colour-sys-primary);
+    text-decoration: underline;
+
+    &:hover {
+      color: var(--ncos-colour-sys-primary-container);
+    }
   }
 }

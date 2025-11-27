@@ -23,6 +23,12 @@ function extractTextContent(innerHTML: string): React.ReactNode {
             if (domNode instanceof Element && domNode.attribs?.class?.includes('ncos-text')) {
                 return <>{domToReact(domNode.children as any, options)}</>;
             }
+
+            // Remove empty class attributes from all elements
+            if (domNode instanceof Element && domNode.attribs?.class === '') {
+                const { class: _, ...restAttribs } = domNode.attribs;
+                domNode.attribs = restAttribs;
+            }
         }
     };
 

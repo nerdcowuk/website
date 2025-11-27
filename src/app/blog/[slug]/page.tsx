@@ -100,6 +100,12 @@ export default async function BlogPost({ params }: PageProps) {
 // Generate static params for known posts (optional - for SSG)
 export async function generateStaticParams() {
 	try {
+		// Skip if WordPress API URL is not configured
+		if (!process.env.WORDPRESS_API_URL) {
+			console.warn('⚠️ WORDPRESS_API_URL not configured, skipping static generation');
+			return [];
+		}
+
 		const response = await axios.get(
 			`${process.env.WORDPRESS_API_URL}/posts?per_page=100`,
 			{ timeout: 10000 }
@@ -107,11 +113,22 @@ export async function generateStaticParams() {
 
 		const posts = response.data;
 
+		if (!Array.isArray(posts)) {
+			console.warn('⚠️ WordPress API returned non-array response');
+			return [];
+		}
+
 		return posts.map((post: any) => ({
 			slug: post.slug,
 		}));
-	} catch (error) {
-		console.error('Error generating static params:', error);
+	} catch (error: any) {
+		// This is expected to fail during build if WordPress is not accessible
+		// Return empty array to allow dynamic rendering instead
+		if (error.code === 'ERR_BAD_RESPONSE' && error.response?.status === 500) {
+			console.warn('⚠️ WordPress API returned 500, skipping static generation. Posts will be generated on-demand.');
+		} else {
+			console.warn('⚠️ Could not fetch posts for static generation:', error.message);
+		}
 		return [];
 	}
 }
