@@ -5,8 +5,8 @@
 // ============================================================================
 // PRIMITIVE TOKENS (Brand Type)
 // ============================================================================
-$ncos-font-family-display: "Tandelle";
-$ncos-font-family-body: "Lora";
+$ncos-font-family-display: var(--font-tandelle), serif;
+$ncos-font-family-body: var(--font-lora), serif;
 
 $ncos-font-weight-regular: 400px;
 $ncos-font-weight-semibold: 500px;
