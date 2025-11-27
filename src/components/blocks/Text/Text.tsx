@@ -1,6 +1,7 @@
 import sanitizeHtml from 'sanitize-html';
 import cn from 'classnames';
 import { ReactNode } from 'react';
+import styles from './Text.module.scss';
 
 interface TextProps {
     as?: string | React.ComponentType<any>;
@@ -25,11 +26,11 @@ export default function Text({
     const Tag = (tag || as || 'p') as any;
 
     const classNames = cn(
-        'ncos-text',
+        styles.text,
         className,
-        preset && `ncos-text--preset-${preset}`,
-        align && `ncos-text--align-${align}`,
-        tag && `ncos-text--tag-${tag}`
+        preset && styles[`text--preset-${preset}`],
+        align && styles[`text--align-${align}`],
+        tag && styles[`text--tag-${tag}`]
     );
 
     // For non-string children (React nodes with HTML), don't sanitize

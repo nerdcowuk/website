@@ -1,5 +1,6 @@
 import cn from 'classnames';
 import { ReactNode } from 'react';
+import styles from './Box.module.scss';
 
 interface BoxProps {
     as?: string | React.ComponentType<any>;
@@ -19,14 +20,14 @@ export default function Box({
     theme,
     width,
     gutters,
-    ...restProps 
+    ...restProps
 }: BoxProps) {
     const classNames = cn(
-        'ncos-crate',
+        styles.box,
         className,
-        theme && `ncos-crate--theme-${theme}`,
-        width && `ncos-container--max-width-${width}`,
-        gutters === false && 'ncos-container--disable-gutters'
+        theme && styles[`box--theme-${theme}`],
+        width && styles[`box--maxWidth-${width}`],
+        gutters === false && styles['box--disableGutters']
     );
 
     return (

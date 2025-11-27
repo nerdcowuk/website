@@ -1,0 +1,13 @@
+// ============================================================================
+// Tokens - Main Export
+// ============================================================================
+// Import this file in your component SCSS files to access all design tokens
+// Usage: @use '@/styles/tokens' as *;
+
+@forward './colors';
+@forward './typography';
+@forward './spacing';
+@forward './breakpoints';
+@forward './radius';
+@forward './shadows';
+@forward './z-index';
