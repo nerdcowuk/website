@@ -38,9 +38,9 @@ export default async function BlogPost({ params }: PageProps) {
 				<Text as="h1">{post.title.rendered}</Text>
 
 				{post._embedded?.author && post._embedded.author[0] && (
-					<div className="mt-2 text-sm text-gray-600">
-						By {post._embedded.author[0].name}
-					</div>
+					<Box>
+						<Text>By {post._embedded.author[0].name}</Text>
+					</Box>
 				)}
 
 				<Text>Summary bro...</Text>

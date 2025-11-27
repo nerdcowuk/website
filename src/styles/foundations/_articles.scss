@@ -1,28 +1,25 @@
-@use '../tokens' as *;
-@use '../extends' as *;
-
 article {
     max-width: 750px;
     margin: 0 auto;
 
     header {
-        padding: 32px 0px;
+        padding: var(--ncos-spacing-x4) 0px;
 
         >*:not(:first-child) {
-            margin-top: 32px;
+            margin-top: var(--ncos-spacing-x4);
         }
     }
 
     h2, h3 {
-        margin-top: 48px;
+        margin-top: var(--ncos-spacing-x6);
     }
 
     h4, h5, h6 {
-        margin-top: 40px;
+        margin-top: var(--ncos-spacing-x5);
     }
 
     p {
-        margin-top: 32px;
+        margin-top: var(--ncos-spacing-x4);
     }
 
     *:first-child {

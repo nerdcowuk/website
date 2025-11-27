@@ -369,4 +369,19 @@
     --ncos-text-label-small-font-weight: #{$ncos-text-label-small-font-weight};
     --ncos-text-label-small-font-letter-spacing: #{$ncos-text-label-small-font-letter-spacing};
     --ncos-text-label-small-font-line-height: #{$ncos-text-label-small-font-line-height};
+
+    // Spacings
+    --ncos-spacing-x0_25: #{$ncos-spacing-01};
+    --ncos-spacing-x0_5: #{$ncos-spacing-02};
+    --ncos-spacing-x1: #{$ncos-spacing-03};
+    --ncos-spacing-x1_5: #{$ncos-spacing-04};
+    --ncos-spacing-x2: #{$ncos-spacing-05};
+    --ncos-spacing-x3: #{$ncos-spacing-06};
+    --ncos-spacing-x4: #{$ncos-spacing-07};
+    --ncos-spacing-x5: #{$ncos-spacing-08};
+    --ncos-spacing-x6: #{$ncos-spacing-09};
+    --ncos-spacing-x8: #{$ncos-spacing-10};
+    --ncos-spacing-x10: #{$ncos-spacing-11};
+    --ncos-spacing-x12: #{$ncos-spacing-12};
+    --ncos-spacing-x20: #{$ncos-spacing-13};
 }
