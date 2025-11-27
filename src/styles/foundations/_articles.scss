@@ -1,0 +1,15 @@
+@use '../tokens' as *;
+@use '../extends' as *;
+
+article {
+    max-width: 750px;
+    margin: 0 auto;
+
+    header {
+        padding: 32px 0px;
+    }
+
+    .ncos-text {
+        margin-top: 32px;
+    }
+}

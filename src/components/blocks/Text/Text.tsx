@@ -33,6 +33,8 @@ export default function Text({
         className
     );
 
+    console.log(classNames);
+
     // For non-string children (React nodes with HTML), don't sanitize
     // For string children, allow common inline formatting tags
     const cleanContent = typeof children === 'string' ? sanitizeHtml(children, {

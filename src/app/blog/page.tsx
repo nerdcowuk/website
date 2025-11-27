@@ -26,8 +26,6 @@ interface Post {
 
 async function getPosts(page: number = 1, perPage: number = 10) {
 	try {
-		console.log('Fetching posts from:', `${process.env.WORDPRESS_API_URL}/posts?page=${page}&per_page=${perPage}&_embed`);
-
 		const response = await axios.get(
 			`${process.env.WORDPRESS_API_URL}/posts?page=${page}&per_page=${perPage}&_embed`,
 			{ timeout: 10000 }

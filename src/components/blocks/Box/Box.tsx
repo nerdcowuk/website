@@ -14,7 +14,7 @@ interface BoxProps {
 }
 
 export default function Box({
-    as: Tag = 'section',
+    as: Tag = 'div',
     className,
     children,
     width,

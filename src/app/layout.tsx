@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Lora } from "next/font/google";
 import localFont from "next/font/local";
+import Box from '@/components/blocks/Box/Box';
 import "@/styles/globals.scss";
 
 // Google Font: Lora (body font)
@@ -42,12 +43,12 @@ export default function RootLayout({
 	return (
 		<html lang="en" className={`${lora.variable} ${tandelle.variable}`}>
 			<body>
-				<div id="page">
+				<Box id="page">
 					{/* Header will come here like navigation, announcements, etc */}
-					<main id="content">
+					<Box as="main" id="content">
 						{children}
-					</main>
-				</div>
+					</Box>
+				</Box>
 			</body>
 		</html>
 	);
