@@ -24,6 +24,8 @@ export async function getPostBySlug(slug: string) {
 			next: { revalidate: 60 }
 		});
 
+		console.log(`${WP_API_URL}/posts?slug=${slug}&_embed`);
+
 		if (!response.ok) {
 			return null;
 		}

@@ -1,6 +1,7 @@
 @use '../../../styles/extends' as *;
 
 .ncos-text {
+	color: var(--ncos-colour-sys-on-surface-alt);
 
 	// Generic tag and preset styles
 	&--tag,

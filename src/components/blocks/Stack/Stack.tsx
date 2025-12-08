@@ -27,13 +27,13 @@ export default function Stack({
     ...props
 }: StackProps) {
     const classNames = cn(
-        styles.stack,
+        styles[`ncos-stack`],
         className,
-        direction && styles[`stack--direction-${direction}`],
-        spacing && styles[`stack--spacing-${spacing}`],
-        align && styles[`stack--align-${align}`],
-        justify && styles[`stack--justify-${justify}`],
-        wrap === false && styles['stack--noWrap']
+        direction && styles[`ncos-stack--direction-${direction}`],
+        spacing && styles[`ncos-stack--spacing-${spacing}`],
+        align && styles[`ncos-stack--align-${align}`],
+        justify && styles[`ncos-stack--justify-${justify}`],
+        wrap === false && styles['ncos-stack--noWrap']
     );
     return (
         <Tag className={classNames} {...props}>

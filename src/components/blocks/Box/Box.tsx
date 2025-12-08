@@ -22,10 +22,10 @@ export default function Box({
     ...restProps
 }: BoxProps) {
     const classNames = cn(
-        styles.box,
+        styles[`ncos-box`],
         className,
-        width && styles[`box--max-width-${width}`],
-        gutters === false && styles['box--disable-gutters']
+        width && styles[`ncos-box--max-width-${width}`],
+        gutters === false && styles['ncos-box--disable-gutters']
     );
 
     return (

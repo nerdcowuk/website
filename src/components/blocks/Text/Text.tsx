@@ -25,8 +25,6 @@ export default function Text({
     // Use tag as the element if provided, otherwise use as, otherwise default to 'p'
     const Tag = (tag || as || 'p') as any;
 
-    console.log(Tag, props);
-
     const classNames = cn(
         styles[`ncos-text`],
         styles[`ncos-text--tag-${Tag}`],

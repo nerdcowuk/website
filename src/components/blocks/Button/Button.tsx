@@ -32,9 +32,9 @@ export default function Button({
     ...props
 }: ButtonProps) {
     const classNames = cn(
-        styles.button,
+        styles[`ncos-button`],
         className,
-        variant && styles[`button--variant-${variant}`]
+        variant && styles[`ncos-button--variant-${variant}`]
     );
 
     // Use <a> for href, button otherwise
