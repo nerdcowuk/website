@@ -46,6 +46,21 @@
 		&-p {
 			@extend %text-style-body-lg;
 		}
+
+		&-label {
+			@extend %text-style-label;
+		}
+	}
+
+	a {
+		font: inherit;
+		color: var(--ncos-colour-sys-primary);
+		text-decoration: underline;
+	}
+
+	strong {
+		font: inherit;
+		font-weight: 700;
 	}
 
 }

@@ -242,10 +242,3 @@ $bp-large: 1200px;
         line-height: var(--ncos-text-label-large-font-line-height);
     }
 }
-
-%text-style-label-link {
-    @extend %text-style-label;
-
-    color: var(--ncos-colour-sys-primary);
-    text-decoration: underline;
-}

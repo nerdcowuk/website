@@ -29,7 +29,7 @@ export default async function BlogPost({ params }: PageProps) {
 		<Box as={'article'}>
 
 			<Box as={'header'}>
-				<Text as="p">
+				<Text as="p" preset="label">
 					{post.date && (
 						<Text as="time">
 							Published {new Date(post.date).toLocaleDateString('en-US', {
@@ -41,9 +41,15 @@ export default async function BlogPost({ params }: PageProps) {
 					)}
 					{` `}
 					{category && (
-						<Text as="a" href={category.link}>
-							in {category.name}
-						</Text>
+						<>
+							<Text as="span" href={category.link}>
+								in
+							</Text>
+							{` `}
+							<Text as="a" href={category.link}>
+								{category.name}
+							</Text>
+						</>
 					)}
 				</Text>
 				

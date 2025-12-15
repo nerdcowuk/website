@@ -28,7 +28,7 @@ export default function AuthorBox({
             <img className={styles[`ncos-author-box__image`]} src={image} />
             <Box>
                 <Text>
-                    <Text as="a" href="/blog/author"><Text as="strong">{name}</Text></Text> is a <Text as="strong">{role}</Text> at NerdCow, {children}
+                    <Text as="a" href="/blog/author">{name}</Text> is a <Text as="strong">{role}</Text> at NerdCow, {children}
                 </Text>
             </Box>
         </Box>
