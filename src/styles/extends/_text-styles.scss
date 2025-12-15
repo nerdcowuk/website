@@ -224,6 +224,7 @@ $bp-large: 1200px;
     font-weight: var(--ncos-text-label-small-font-weight);
     letter-spacing: var(--ncos-text-label-small-font-letter-spacing);
     line-height: var(--ncos-text-label-small-font-line-height);
+    text-transform: uppercase;
 
     @media screen and (min-width: $bp-medium) {
         font-family: var(--ncos-text-label-medium-font-family);
@@ -240,4 +241,11 @@ $bp-large: 1200px;
         letter-spacing: var(--ncos-text-label-large-font-letter-spacing);
         line-height: var(--ncos-text-label-large-font-line-height);
     }
+}
+
+%text-style-label-link {
+    @extend %text-style-label;
+
+    color: var(--ncos-colour-sys-primary);
+    text-decoration: underline;
 }

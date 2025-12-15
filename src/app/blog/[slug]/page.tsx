@@ -3,7 +3,7 @@ import { GutenbergRenderer } from '@/components/GutenbergRenderer';
 import Box from '@/components/blocks/Box/Box';
 import Text from '@/components/blocks/Text/Text';
 import AuthorBox from '@/components/blocks/AuthorBox/AuthorBox';
-import { getPostBySlug } from '@/lib/wp-fetch';
+import { getPostBySlug, getCategoryById } from '@/lib/wp-fetch';
 
 interface PageProps {
 	params: Promise<{
@@ -19,7 +19,8 @@ export default async function BlogPost({ params }: PageProps) {
 		notFound();
 	}
 
-	console.log(post._embedded.author[0]);
+	// Get the post category.
+	const category = await getCategoryById(post.categories[0]);
 
 	// Parse Gutenberg blocks from content
 	const blocks = post.blocks || [];
@@ -28,15 +29,24 @@ export default async function BlogPost({ params }: PageProps) {
 		<Box as={'article'}>
 
 			<Box as={'header'}>
-				{post.date && (
-					<Text as="time">
-						{new Date(post.date).toLocaleDateString('en-US', {
-							year: 'numeric',
-							month: 'long',
-							day: 'numeric'
-						})}
-					</Text>
-				)}
+				<Text as="p">
+					{post.date && (
+						<Text as="time">
+							Published {new Date(post.date).toLocaleDateString('en-US', {
+								year: 'numeric',
+								month: 'long',
+								day: 'numeric'
+							})} 
+						</Text>
+					)}
+					{` `}
+					{category && (
+						<Text as="a" href={category.link}>
+							in {category.name}
+						</Text>
+					)}
+				</Text>
+				
 
 				<Text as="h1">{post.title.rendered}</Text>
 
