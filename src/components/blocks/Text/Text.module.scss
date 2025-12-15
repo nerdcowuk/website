@@ -3,10 +3,10 @@
 .ncos-text {
 	color: var(--ncos-colour-sys-on-surface-alt);
 
-	// Generic tag and preset styles
-	&--tag,
-	&--preset {
+	// Matching HTML tags.
+	&--tag {
 
+		// So, this is <h1>, etc...
 		&-h1 {
 			@extend %text-style-display;
 
@@ -45,6 +45,51 @@
 
 		&-p {
 			@extend %text-style-body-lg;
+		}
+
+		&-label {
+			@extend %text-style-label;
+		}
+	}
+
+	// Matching text style tokens.
+	&--preset {
+
+		// So, this is text-style-display, etc...
+		&-display {
+			@extend %text-style-display;
+		}
+
+		&-heading-2xl {
+			@extend %text-style-heading-2xl;
+		}
+
+		&-heading-xl {
+			@extend %text-style-heading-xl;
+		}
+
+		&-heading-lg {
+			@extend %text-style-heading-lg;
+		}
+
+		&-heading-md {
+			@extend %text-style-heading-md;
+		}
+
+		&-heading-sm {
+			@extend %text-style-heading-sm;
+		}
+
+		&-body-lg {
+			@extend %text-style-body-lg;
+		}
+
+		&-body-md {
+			@extend %text-style-body-md;
+		}
+
+		&-body-sm {
+			@extend %text-style-body-sm;
 		}
 
 		&-label {
