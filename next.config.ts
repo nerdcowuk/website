@@ -1,6 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+	turbopack: {
+		rules: {
+			'*.svg': {
+				loaders: ['@svgr/webpack'],
+				as: '*.js',
+			},
+		},
+	},
 	webpack(config) {
 		const fileLoaderRule = config.module.rules.find((rule: any) =>
 			rule.test instanceof RegExp && rule.test.test('.svg')
@@ -16,7 +24,16 @@ const nextConfig: NextConfig = {
 				test: /\.svg$/i,
 				issuer: fileLoaderRule.issuer,
 				resourceQuery: { not: /url/ }, // exclude if *.svg?url
-				use: ["@svgr/webpack"],
+				use: [
+					{
+						loader: "@svgr/webpack",
+						options: {
+							svgo: false,
+							titleProp: true,
+							ref: true,
+						},
+					},
+				],
 			}
 		);
 
