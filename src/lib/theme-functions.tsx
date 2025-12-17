@@ -3,6 +3,14 @@
 import { ReactNode } from 'react';
 import Text from '@/components/blocks/Text/Text';
 
+interface WpAuthor {
+    name: string;
+    description: string;
+    avatar_urls: {
+        [key: number]: string;
+    };
+}
+
 interface WpTerm {
     id: number;
     name: string;
@@ -18,7 +26,9 @@ interface WpPost {
         rendered: string
     },
     date: string,
+    modified: string,
     _embedded?: {
+        author?: WpAuthor[],
         'wp:term'?: WpTerm[][];
     };
 }
@@ -96,4 +106,28 @@ export function getExcerpt(post: WpPost): string {
         .replace(/&#039;/g, "'");
     
     return decoded;
+}
+
+export function getAuthor(post: WpPost): WpAuthor | null {
+    const author = post._embedded?.author;
+
+    if(!author) {
+        return null;
+    }
+
+    return author[0] as WpAuthor;
+}
+
+export function getModifiedDate(post: WpPost): string {
+    const modified = post?.modified;
+
+    if(!modified) {
+        return '';
+    }
+
+    return new Date(modified).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
 }
