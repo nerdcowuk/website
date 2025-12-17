@@ -1,0 +1,23 @@
+.ncos-info-box {
+    background: var(--ncos-colour-sys-primary-container);
+    padding: var(--ncos-spacing-x3);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--ncos-spacing-x1);
+
+    &__title {
+        display: flex;
+        align-items: center;
+        gap: var(--ncos-spacing-x1);
+
+        svg {
+            flex-shrink: 0;
+        }
+        
+        svg,
+        label {
+            color: var(--ncos-colour-sys-on-primary-container);
+        }
+    }
+}
