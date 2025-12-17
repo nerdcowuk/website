@@ -100,6 +100,10 @@ export function GutenbergRenderer({ blocks }: GutenbergRendererProps) {
                         </>
                     );
                 }
+            } else if (block.name === 'core/list-item' && block.innerHTML) {
+                // Strip the outer <li> tags and extract inner content
+                const innerContent = block.innerHTML.replace(/^\s*<li[^>]*>(.*)<\/li>\s*$/, '$1');
+                children = extractTextContent(innerContent);
             } else if (attrs.children) {
                 // Use attrs.children if available (e.g., for buttons)
                 children = attrs.children;

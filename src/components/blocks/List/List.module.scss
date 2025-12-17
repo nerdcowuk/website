@@ -1,0 +1,9 @@
+.ncos-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ncos-spacing-x1_5);
+
+    > .ncos-list {
+        padding-left: var(--ncos-spacing-x2);
+    }
+}
