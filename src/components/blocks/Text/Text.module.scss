@@ -112,6 +112,11 @@
 		font-weight: 700;
 	}
 
+	em {
+		font: inherit;
+		font-style: italic;
+	}
+
 	.anchor {
 		text-decoration: none;
 
