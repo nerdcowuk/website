@@ -5,7 +5,7 @@ import Text from '@/components/blocks/Text/Text';
 import AuthorBox from '@/components/blocks/AuthorBox/AuthorBox';
 import InfoBox from '@/components/blocks/InfoBox/InfoBox';
 import { getPostBySlug } from '@/lib/wp-fetch';
-import { getDate, getCategories, getTitle, getExcerpt } from '@/lib/theme-functions';
+import { getDate, getModifiedDate, getCategories, getTitle, getExcerpt, getAuthor } from '@/lib/theme-functions';
 
 interface PageProps {
 	params: Promise<{
@@ -22,9 +22,11 @@ export default async function BlogPost({ params }: PageProps) {
 	}
 
 	const date = getDate(post);
+	const modifiedDate = getModifiedDate(post);
 	const categories = getCategories(post);
 	const title = getTitle(post);
 	const excerpt = getExcerpt(post);
+	const author = getAuthor(post);
 
 	// Parse Gutenberg blocks from content
 	const blocks = post.blocks || [];
@@ -47,9 +49,9 @@ export default async function BlogPost({ params }: PageProps) {
 
 				<Text as="h1">{title}</Text>
 
-				{post._embedded?.author && post._embedded.author[0] && (
-					<AuthorBox image={post._embedded.author[0].avatar_urls[48]} name={post._embedded.author[0].name} role={'Product Manager'}>
-						{post._embedded.author[0].description}
+				{author && (
+					<AuthorBox image={author.avatar_urls[48]} name={author.name} role={'Product Manager'}>
+						{author.description}
 					</AuthorBox>
 				)}
 
@@ -66,6 +68,11 @@ export default async function BlogPost({ params }: PageProps) {
 				/* Fallback to rendered HTML if blocks aren't available */
 				<div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
 			)}
+
+			<Box className="footnote">
+				<Text preset="body-md">Originally published {date}, updated {modifiedDate}.</Text>
+			</Box>
+
 		</Box>
 	);
 }
