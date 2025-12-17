@@ -4,6 +4,8 @@
 import { getBlockComponent } from '../lib/block-registry';
 import parse, { domToReact, HTMLReactParserOptions, Element } from 'html-react-parser';
 import Text from './blocks/Text/Text';
+import Icon from '@/components/blocks/Icon';
+import ExternalIcon from '@/components/blocks/Icon/svg/external.svg';
 import styles from './blocks/Text/Text.module.scss';
 
 interface GutenbergBlock {
@@ -34,11 +36,19 @@ function extractTextContent(innerHTML: string): React.ReactNode {
                 // For inline elements, wrap them in Text component
                 if (inlineElements.includes(domNode.name)) {
                     // Extract props from attributes
-                    const { class: className, ...otherAttribs } = domNode.attribs || {};
+                    const { class: className, target, ...otherAttribs } = domNode.attribs || {};
+                    
+                    const children = domToReact(domNode.children as any, options);
+                    
+                    // Check if it's an external link
+                    const isExternalLink = domNode.name === 'a' && target === '_blank';
 
                     return (
-                        <Text as={domNode.name} className={className} {...otherAttribs}>
-                            {domToReact(domNode.children as any, options)}
+                        <Text as={domNode.name} className={className} target={target} {...otherAttribs}>
+                            {children}
+                            {isExternalLink && (
+                                <Icon icon={ExternalIcon} className={styles['external']}/>
+                            )}
                         </Text>
                     );
                 }
