@@ -12,6 +12,7 @@ const blockComponents: Record<string, ComponentType<any>> = {
 	Text: dynamic(() => import('@/components/blocks/Text/Text').then(mod => mod.default), { ssr: false }),
 	Stack: dynamic(() => import('@/components/blocks/Stack/Stack').then(mod => mod.default), { ssr: false }),
 	Button: dynamic(() => import('@/components/blocks/Button/Button').then(mod => mod.default), { ssr: false }),
+	Media: dynamic(() => import('@/components/blocks/Media/Media').then(mod => mod.default), { ssr: false }),
 };
 
 /**
