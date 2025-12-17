@@ -4,6 +4,7 @@
 import { getBlockComponent } from '../lib/block-registry';
 import parse, { domToReact, HTMLReactParserOptions, Element } from 'html-react-parser';
 import Text from './blocks/Text/Text';
+import styles from './blocks/Text/Text.module.scss';
 
 interface GutenbergBlock {
     name: string;
@@ -73,8 +74,22 @@ export function GutenbergRenderer({ blocks }: GutenbergRendererProps) {
                 // Has inner blocks - render them recursively
                 children = <GutenbergRenderer blocks={innerBlocks} />;
             } else if (block.name === 'ncos/text' && block.innerHTML) {
+                // Extract id from the root element if present
+                const idMatch = block.innerHTML.match(/\sid="([^"]*)"/);
+                
                 // Text blocks: extract inner content from innerHTML
                 children = extractTextContent(block.innerHTML);
+                
+                // If id exists, append the link to children
+                if (idMatch) {
+                    filteredAttrs.id = idMatch[1];
+                    children = (
+                        <>
+                            <a href={`#${idMatch[1]}`} className={styles['anchor']}>#</a>
+                            {children}
+                        </>
+                    );
+                }
             } else if (attrs.children) {
                 // Use attrs.children if available (e.g., for buttons)
                 children = attrs.children;

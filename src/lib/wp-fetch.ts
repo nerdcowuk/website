@@ -1,4 +1,34 @@
-const WP_API_URL = 'https://nerdcow.co.uk/wp-json/wp/v2';
+const WP_API_URL = process.env.WORDPRESS_API_URL;
+
+interface Post {
+	id: number;
+	slug: string;
+	title: {
+		rendered: string;
+	};
+	excerpt: {
+		rendered: string;
+	};
+	date: string;
+}
+
+export async function getPosts() {
+	try {
+		const response = await fetch(`${WP_API_URL}/posts`, {
+			next: { revalidate: 60 }
+		});
+
+		if (!response.ok) {
+			throw new Error(`Failed to fetch posts: ${response.status}`);
+		}
+
+		const posts: Post[] = await response.json();
+		return posts;
+	} catch (error) {
+		console.error('Error fetching posts:', error);
+		return [];
+	}
+}
 
 export async function getPostById(id: number) {
 	try {
