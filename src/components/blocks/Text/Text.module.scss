@@ -101,11 +101,26 @@
 		font: inherit;
 		color: var(--ncos-colour-sys-primary);
 		text-decoration: underline;
+
+		&:hover {
+			color: var(--ncos-colour-sys-on-primary-container);
+		}
 	}
 
 	strong {
 		font: inherit;
 		font-weight: 700;
+	}
+
+	.anchor {
+		text-decoration: none;
+
+		@media (min-width: 900px) {
+			width: 40px;
+			position: absolute;
+			left: -48px;
+			text-align: right;
+		}
 	}
 
 }
