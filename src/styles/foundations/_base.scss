@@ -4,8 +4,13 @@
 
 @use '../extends' as *;
 
+::selection {
+	background: var(--ncos-colour-sys-primary-alt);
+	color: var(--ncos-colour-sys-on-primary-alt);
+}
+
 body {
-	@extend %text-style-body-lg;
+	@extend %text-style-body-large;
 	
 	color: var(--ncos-colour-sys-on-surface-alt);
 	background: var(--ncos-colour-sys-surface);

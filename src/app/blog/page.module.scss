@@ -1,0 +1,39 @@
+.archive {
+
+    &__featured {
+        background: var(--ncos-colour-sys-contrast-surface);
+        padding-top: var(--ncos-spacing-medium);
+	    padding-bottom: var(--ncos-spacing-medium);
+
+        div {
+            grid-column: -1 /1;
+        }
+
+        h1 {
+            text-transform: uppercase;
+            line-height: var(--ncos-line-height-tight);
+            color: var(--ncos-colour-sys-primary);
+            max-width: 10em;
+        }
+
+        p {
+            color: var(--ncos-colour-sys-on-contrast-surface);
+            max-width: 35em;
+        }
+    }
+
+    &__feed {
+        padding-top: var(--ncos-spacing-medium);
+	    padding-bottom: var(--ncos-spacing-medium);
+        gap: var(--ncos-spacing-large);
+
+        div {
+            grid-column: span 8;
+        }
+
+        aside {
+            background: red;
+            grid-column: span 4;
+        }
+    }
+}

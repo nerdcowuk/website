@@ -8,7 +8,7 @@ interface StackProps {
     innerBlocks?: any[];
     children?: React.ReactNode;
     direction?: string;
-    spacing?: number;
+    spacing?: number | string;
     align?: string;
     justify?: string;
     wrap?: boolean;

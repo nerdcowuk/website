@@ -3,11 +3,9 @@
 // ============================================================================
 // This file is imported in app/layout.tsx
 
-// Import tokens (available as CSS variables if needed)
-@use './tokens' as *;
-
 // Import foundations
 @use './foundations/reset';
-@use './foundations/theme';
+@use './foundations/root';
 @use './foundations/base';
-@use './foundations/articles';
+@use './foundations/section';
+@use './foundations/article';

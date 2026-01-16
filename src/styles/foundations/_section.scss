@@ -1,0 +1,7 @@
+section {
+	display: grid;
+	padding-left: var(--ncos-spacing-medium);
+	padding-right: var(--ncos-spacing-medium);
+	gap: var(--ncos-spacing-floor);
+	grid-template-columns: repeat(12, 1fr);
+}

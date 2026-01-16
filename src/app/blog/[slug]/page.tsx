@@ -47,7 +47,7 @@ export default async function BlogPost({ params }: PageProps) {
 					)}
 				</Text>
 
-				<Text as="h1">{title}</Text>
+				<Text as="h1" preset='display-large'>{title}</Text>
 
 				{author && (
 					<AuthorBox image={author.avatar_urls[48]} name={author.name} role={'Product Manager'}>

@@ -3,97 +3,105 @@
 .ncos-text {
 	color: var(--ncos-colour-sys-on-surface-alt);
 
-	// Matching HTML tags.
+	// Matching HTML tags - colors only.
 	&--tag {
 
-		// So, this is <h1>, etc...
-		&-h1 {
-			@extend %text-style-display;
-
-			color: var(--ncos-colour-sys-on-surface);
-		}
-
-		&-h2 {
-			@extend %text-style-heading-2xl;
-
-			color: var(--ncos-colour-sys-on-surface);
-		}
-
-		&-h3 {
-			@extend %text-style-heading-xl;
-
-			color: var(--ncos-colour-sys-on-surface);
-		}
-
-		&-h4 {
-			@extend %text-style-heading-lg;
-
-			color: var(--ncos-colour-sys-on-surface);
-		}
-
-		&-h5 {
-			@extend %text-style-heading-md;
-
-			color: var(--ncos-colour-sys-on-surface);
-		}
-
+		&-h1,
+		&-h2,
+		&-h3,
+		&-h4,
+		&-h5,
 		&-h6 {
-			@extend %text-style-heading-sm;
-
 			color: var(--ncos-colour-sys-on-surface);
 		}
+	}
 
-		&-p {
-			@extend %text-style-body-lg;
-		}
+	// Default typography for tags when no preset is specified.
+	&--tag-h1:not([class*="--preset-"]) {
+		@extend %text-style-heading-1;
+	}
 
-		&-label {
-			@extend %text-style-label;
-		}
+	&--tag-h2:not([class*="--preset-"]) {
+		@extend %text-style-heading-2;
+	}
+
+	&--tag-h3:not([class*="--preset-"]) {
+		@extend %text-style-heading-3;
+	}
+
+	&--tag-h4:not([class*="--preset-"]) {
+		@extend %text-style-heading-4;
+	}
+
+	&--tag-h5:not([class*="--preset-"]) {
+		@extend %text-style-heading-5;
+	}
+
+	&--tag-h6:not([class*="--preset-"]) {
+		@extend %text-style-heading-6;
+	}
+
+	&--tag-p:not([class*="--preset-"]) {
+		@extend %text-style-body-large;
+	}
+
+	&--tag-label:not([class*="--preset-"]) {
+		@extend %text-style-label-large;
 	}
 
 	// Matching text style tokens.
 	&--preset {
 
-		// So, this is text-style-display, etc...
-		&-display {
-			@extend %text-style-display;
+		&-display-large {
+			@extend %text-style-display-large;
 		}
 
-		&-heading-2xl {
-			@extend %text-style-heading-2xl;
+		&-display-small {
+			@extend %text-style-display-small;
 		}
 
-		&-heading-xl {
-			@extend %text-style-heading-xl;
+		&-heading-1 {
+			@extend %text-style-heading-1;
 		}
 
-		&-heading-lg {
-			@extend %text-style-heading-lg;
+		&-heading-2 {
+			@extend %text-style-heading-2;
 		}
 
-		&-heading-md {
-			@extend %text-style-heading-md;
+		&-heading-3 {
+			@extend %text-style-heading-3;
 		}
 
-		&-heading-sm {
-			@extend %text-style-heading-sm;
+		&-heading-4 {
+			@extend %text-style-heading-4;
 		}
 
-		&-body-lg {
-			@extend %text-style-body-lg;
+		&-heading-5 {
+			@extend %text-style-heading-5;
 		}
 
-		&-body-md {
-			@extend %text-style-body-md;
+		&-heading-6 {
+			@extend %text-style-heading-6;
 		}
 
-		&-body-sm {
-			@extend %text-style-body-sm;
+		&-body-large {
+			@extend %text-style-body-large;
 		}
 
-		&-label {
-			@extend %text-style-label;
+		&-body-small {
+			@extend %text-style-body-small;
+		}
+
+		&-caption {
+			@extend %text-style-caption;
+		}
+
+		&-label-large {
+			@extend %text-style-label-large;
+		}
+
+		&-label-small {
+			@extend %text-style-label-small;
 		}
 	}
 

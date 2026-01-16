@@ -1,5 +1,3 @@
-@use '@/styles/tokens' as *;
-
 .ncos-stack {
   // Base stack (flexbox) styles
   display: flex;
@@ -22,35 +20,50 @@
   }
 
   // Spacing modifiers (gap)
-  /*
-  &--spacing-1 {
-    gap: $spacing-1;
+  &--spacing-xxxx-small {
+    gap: var(--ncos-spacing-xxxx-small)
   }
 
-  &--spacing-2 {
-    gap: $spacing-2;
+  &--spacing-xxx-small {
+    gap: var(--ncos-spacing-xxx-small);
   }
 
-  &--spacing-3 {
-    gap: $spacing-3;
+  &--spacing-xx-small {
+    gap: var(--ncos-spacing-xx-small)
   }
 
-  &--spacing-4 {
-    gap: $spacing-4;
+  &--spacing-x-small {
+    gap: var(--ncos-spacing-x-small);
   }
 
-  &--spacing-6 {
-    gap: $spacing-6;
+  &--spacing-small {
+    gap: var(--ncos-spacing-small);
   }
 
-  &--spacing-8 {
-    gap: $spacing-8;
+  &--spacing-floor {
+    gap: var(--ncos-spacing-floor);
   }
 
-  &--spacing-12 {
-    gap: $spacing-12;
+  &--spacing-medium {
+    gap: var(--ncos-spacing-medium);
   }
-  */
+
+  &--spacing-large {
+    gap: var(--ncos-spacing-large);
+  }
+
+  &--spacing-x-large {
+    gap: var(--ncos-spacing-x-large);
+  }
+
+  &--spacing-xx-large {
+    gap: var(--ncos-spacing-xx-large);
+  }
+
+  &--spacing-xxx-large {
+    gap: var(--ncos-spacing-xxx-large);
+  }
+
   
   // Alignment modifiers
   &--align-start {
