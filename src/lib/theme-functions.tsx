@@ -6,6 +6,7 @@ import Text from '@/components/blocks/Text/Text';
 interface WpAuthor {
     name: string;
     description: string;
+    link: string;
     avatar_urls: {
         [key: number]: string;
     };
@@ -18,6 +19,17 @@ interface WpTerm {
     taxonomy: string;
 }
 
+interface ContentImage {
+    id: number | null;
+    url: string;
+    alt: string;
+    width: number | null;
+    height: number | null;
+    srcset: string | null;
+    sizes: string | null;
+    caption: string | null;
+}
+
 interface WpPost {
     title: {
         rendered: string
@@ -25,8 +37,11 @@ interface WpPost {
     excerpt?: {
         rendered: string
     },
+    slug: string,
     date: string,
     modified: string,
+    estimatedReadingTime?: number,
+    contentImages?: ContentImage[],
     _embedded?: {
         author?: WpAuthor[],
         'wp:term'?: WpTerm[][];
@@ -81,10 +96,8 @@ export function getCategories(post: WpPost): ReactNode {
     );
 }
 
-export function getTitle(post: WpPost): ReactNode {
-    const title = post.title.rendered;
-
-    return title;
+export function getTitle(post: WpPost): string {
+    return post.title.rendered;
 }
 
 export function getExcerpt(post: WpPost): string {
@@ -130,4 +143,33 @@ export function getModifiedDate(post: WpPost): string {
         month: 'long',
         day: 'numeric'
     });
+}
+
+export function getReadTime(post: WpPost): number | null {
+    return post.estimatedReadingTime ?? null;
+}
+
+export function getSlug(post: WpPost): string {
+    return post.slug ?? '';
+}
+
+export function getDateString(post: WpPost): string {
+    if (!post?.date) return '';
+    return new Date(post.date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+}
+
+export function getAuthorName(post: WpPost): string {
+    return post._embedded?.author?.[0]?.name ?? '';
+}
+
+export function getAuthorUrl(post: WpPost): string {
+    return post._embedded?.author?.[0]?.link ?? '';
+}
+
+export function getContentImages(post: WpPost): ContentImage[] {
+    return post.contentImages ?? [];
 }

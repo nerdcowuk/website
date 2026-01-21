@@ -15,6 +15,7 @@ const blockComponents: Record<string, ComponentType<any>> = {
 	Media: dynamic(() => import('@/components/blocks/Media/Media').then(mod => mod.default), { ssr: false }),
 	List: dynamic(() => import('@/components/blocks/List/List').then(mod => mod.default), { ssr: false }),
 	ListItem: dynamic(() => import('@/components/blocks/ListItem/ListItem').then(mod => mod.default), { ssr: false }),
+	Divider: dynamic(() => import('@/components/blocks/Divider/Divider').then(mod => mod.default), { ssr: false }),
 };
 
 /**

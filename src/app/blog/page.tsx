@@ -2,9 +2,12 @@ import Link from 'next/link';
 import Box from '@/components/blocks/Box/Box';
 import Text from '@/components/blocks/Text/Text';
 import Stack from '@/components/blocks/Stack/Stack';
+import PostCard from '@/components/blocks/PostCard/PostCard';
+import Divider from '@/components/blocks/Divider/Divider';
 import styles from './page.module.scss';
 
 import { getPosts } from '@/lib/wp-fetch';
+import { getTitle, getSlug, getDateString, getAuthorName, getAuthorUrl, getReadTime, getContentImages } from '@/lib/theme-functions';
 
 export default async function BlogListing() {
 	const posts = await getPosts();
@@ -29,14 +32,26 @@ export default async function BlogListing() {
 				</Stack>
 			</Box>
 			<Box as="section" className={styles[`archive__feed`]}>
-				<Stack direction='column'>
-					{posts.map((post) => (
-						<Box key={post.id}>
-							<Link href={`/blog/${post.slug}`}>
-								<Text>➡️ {post.title.rendered}</Text>
-							</Link>
-						</Box>
-					))}
+				<Stack direction='column' spacing='floor'>
+					<Text as={'h5'}>Just for you</Text>
+					<Stack spacing='small' direction='column'>
+						{posts.map((post, index) => (
+							<>
+								<PostCard
+									key={post.id}
+									number={index + 1}
+									title={getTitle(post)}
+									url={`/blog/${getSlug(post)}`}
+									authorName={getAuthorName(post)}
+									authorUrl={getAuthorUrl(post)}
+									date={getDateString(post)}
+									readTime={getReadTime(post) ?? undefined}
+									images={getContentImages(post)}
+								/>
+								<Divider />
+							</>
+						))}
+					</Stack>
 				</Stack>
 				<Stack direction='column' as='aside'>
 					Praaaa
@@ -46,14 +61,25 @@ export default async function BlogListing() {
 				Categories bro
 			</Box>
 			<Box as="section" className={styles[`archive__feed`]}>
-				<Stack direction='column'>
-					{posts.map((post) => (
-						<Box key={post.id}>
-							<Link href={`/blog/${post.slug}`}>
-								<Text>➡️ {post.title.rendered}</Text>
-							</Link>
-						</Box>
-					))}
+				<Stack direction='column' spacing='floor'>
+					<Text as={'h5'}>Latest</Text>
+					<Stack spacing='small' direction='column'>
+						{posts.map((post, index) => (
+							<>
+								<PostCard
+									key={post.id}
+									title={getTitle(post)}
+									url={`/blog/${getSlug(post)}`}
+									authorName={getAuthorName(post)}
+									authorUrl={getAuthorUrl(post)}
+									date={getDateString(post)}
+									readTime={getReadTime(post) ?? undefined}
+									images={getContentImages(post)}
+								/>
+								<Divider />
+							</>
+						))}
+					</Stack>
 				</Stack>
 				<Stack direction='column' as='aside'>
 					Praaaa

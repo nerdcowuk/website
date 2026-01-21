@@ -13,6 +13,7 @@
     "@wordpress/block-serialization-default-parser": "^5.34.0",
     "axios": "^1.13.2",
     "classnames": "^2.5.1",
+    "embla-carousel-react": "^8.6.0",
     "html-react-parser": "^5.2.7",
     "next": "^16.0.0",
     "react": "19.1.0",
