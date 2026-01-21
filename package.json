@@ -14,7 +14,7 @@
     "axios": "^1.13.2",
     "classnames": "^2.5.1",
     "html-react-parser": "^5.2.7",
-    "next": "15.5.9",
+    "next": "^16.0.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "sanitize-html": "^2.17.0",
@@ -29,7 +29,7 @@
     "@types/sanitize-html": "^2.16.0",
     "@types/webpack": "^5.28.5",
     "eslint": "^9",
-    "eslint-config-next": "15.5.5",
+    "eslint-config-next": "^16.0.0",
     "patch-package": "^8.0.1",
     "typescript": "^5",
     "webpack": "^5.103.0"
