@@ -2,6 +2,18 @@ import type { NextConfig } from "next";
 import type { Configuration, RuleSetRule } from 'webpack';
 
 const nextConfig: NextConfig = {
+	images: {
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'nerdcowcouk.local',
+			},
+			{
+				protocol: 'https',
+				hostname: 'secure.gravatar.com',
+			},
+		],
+	},
 	turbopack: {
 		rules: {
 			'*.svg': {

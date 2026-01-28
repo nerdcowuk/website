@@ -176,10 +176,14 @@ export interface PostCardProps {
     number?: number;
     /** Images from post content */
     images?: Array<{
+        id: number | null;
         url: string;
         alt: string;
         width: number | null;
         height: number | null;
+        srcset: string | null;
+        sizes: string | null;
+        caption: string | null;
     }>;
 }
 

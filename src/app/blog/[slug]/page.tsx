@@ -5,7 +5,7 @@ import Text from '@/components/primitives/Text';
 import AuthorBox from '@/components/patterns/AuthorBox';
 import InfoBox from '@/components/blocks/InfoBox';
 import { getPostBySlug } from '@/lib/wp-fetch';
-import { getDate, getModifiedDate, getCategories, getTitle, getExcerpt, getAuthor } from '@/lib/theme-functions';
+import { getDate, getModifiedDate, getCategories, getTitle, getExcerpt, getAuthor, getAuthorSlug } from '@/lib/theme-functions';
 import { sanitizeWordPressHtml } from '@/lib/wordpress/sanitize';
 
 interface PageProps {
@@ -28,6 +28,7 @@ export default async function BlogPost({ params }: PageProps) {
 	const title = getTitle(post);
 	const excerpt = getExcerpt(post);
 	const author = getAuthor(post);
+	const authorSlug = getAuthorSlug(post);
 
 	// Parse Gutenberg blocks from content
 	const blocks = post.blocks || [];
@@ -51,7 +52,12 @@ export default async function BlogPost({ params }: PageProps) {
 				<Text as="h1" preset='display-large'>{title}</Text>
 
 				{author && (
-					<AuthorBox image={author.avatar_urls?.[48]} name={author.name} role={'Product Manager'}>
+					<AuthorBox
+						image={author.avatar_urls?.[48]}
+						name={author.name}
+						slug={authorSlug || undefined}
+						role={'Product Manager'}
+					>
 						{author.description}
 					</AuthorBox>
 				)}
