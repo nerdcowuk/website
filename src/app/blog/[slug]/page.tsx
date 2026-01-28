@@ -1,11 +1,12 @@
 import { notFound } from 'next/navigation';
 import { GutenbergRenderer } from '@/components/GutenbergRenderer';
-import Box from '@/components/blocks/Box/Box';
-import Text from '@/components/blocks/Text/Text';
-import AuthorBox from '@/components/blocks/AuthorBox/AuthorBox';
-import InfoBox from '@/components/blocks/InfoBox/InfoBox';
+import Box from '@/components/primitives/Box';
+import Text from '@/components/primitives/Text';
+import AuthorBox from '@/components/patterns/AuthorBox';
+import InfoBox from '@/components/blocks/InfoBox';
 import { getPostBySlug } from '@/lib/wp-fetch';
 import { getDate, getModifiedDate, getCategories, getTitle, getExcerpt, getAuthor } from '@/lib/theme-functions';
+import { sanitizeWordPressHtml } from '@/lib/wordpress/sanitize';
 
 interface PageProps {
 	params: Promise<{
@@ -50,7 +51,7 @@ export default async function BlogPost({ params }: PageProps) {
 				<Text as="h1" preset='display-large'>{title}</Text>
 
 				{author && (
-					<AuthorBox image={author.avatar_urls[48]} name={author.name} role={'Product Manager'}>
+					<AuthorBox image={author.avatar_urls?.[48]} name={author.name} role={'Product Manager'}>
 						{author.description}
 					</AuthorBox>
 				)}
@@ -65,8 +66,8 @@ export default async function BlogPost({ params }: PageProps) {
 			{blocks.length > 0 ? (
 				<GutenbergRenderer blocks={blocks} />
 			) : (
-				/* Fallback to rendered HTML if blocks aren't available */
-				<div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+				/* Fallback to rendered HTML if blocks aren't available - sanitized for security */
+				<div dangerouslySetInnerHTML={{ __html: sanitizeWordPressHtml(post.content?.rendered) }} />
 			)}
 
 			<Box className="footnote">

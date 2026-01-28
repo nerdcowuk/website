@@ -1,0 +1,96 @@
+/**
+ * Responsive Media Query Mixins
+ *
+ * Mobile-first breakpoint system.
+ *
+ * Usage:
+ *   @include media-sm { ... }  // 640px and up
+ *   @include media-md { ... }  // 768px and up
+ *   @include media-lg { ... }  // 1024px and up
+ *   @include media-xl { ... }  // 1280px and up
+ */
+
+@use 'sass:map';
+
+// Breakpoint values
+$breakpoints: (
+    'sm': 640px,
+    'md': 768px,
+    'lg': 1024px,
+    'xl': 1280px,
+    '2xl': 1536px
+);
+
+// Min-width (mobile-first)
+@mixin media-sm {
+    @media (min-width: map.get($breakpoints, 'sm')) {
+        @content;
+    }
+}
+
+@mixin media-md {
+    @media (min-width: map.get($breakpoints, 'md')) {
+        @content;
+    }
+}
+
+@mixin media-lg {
+    @media (min-width: map.get($breakpoints, 'lg')) {
+        @content;
+    }
+}
+
+@mixin media-xl {
+    @media (min-width: map.get($breakpoints, 'xl')) {
+        @content;
+    }
+}
+
+@mixin media-2xl {
+    @media (min-width: map.get($breakpoints, '2xl')) {
+        @content;
+    }
+}
+
+// Max-width (for edge cases)
+@mixin media-below-sm {
+    @media (max-width: #{map.get($breakpoints, 'sm') - 1px}) {
+        @content;
+    }
+}
+
+@mixin media-below-md {
+    @media (max-width: #{map.get($breakpoints, 'md') - 1px}) {
+        @content;
+    }
+}
+
+// Specific ranges
+@mixin media-between($min, $max) {
+    @media (min-width: map.get($breakpoints, $min)) and (max-width: #{map.get($breakpoints, $max) - 1px}) {
+        @content;
+    }
+}
+
+// Hover capability (touch vs pointer devices)
+@mixin hover {
+    @media (hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+// Reduced motion preference
+@mixin reduced-motion {
+    @media (prefers-reduced-motion: reduce) {
+        @content;
+    }
+}
+
+// Dark mode preference (for future use)
+@mixin dark-mode {
+    @media (prefers-color-scheme: dark) {
+        @content;
+    }
+}

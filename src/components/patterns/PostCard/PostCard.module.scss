@@ -1,0 +1,105 @@
+@use '@/styles/mixins' as *;
+
+.ncos-post-card {
+
+    h4 a {
+        @include link-reset;
+        color: black;
+
+        @include hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 1.5em;
+        height: 1.5em;
+        flex-shrink: 0;
+
+        position: relative;
+
+        span {
+            color: var(--ncos-colour-sys-secondary);
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+        }
+    }
+
+    &__bullet {
+        width: 0.75em;
+        height: 0.75em;
+        background: var(--ncos-colour-sys-primary);
+        flex-shrink: 0;
+        position: relative;
+        top: var(--ncos-spacing-xxx-small);
+    }
+
+    &__gallery {
+        &-viewport {
+            overflow: hidden;
+        }
+
+        &-container {
+            display: flex;
+            touch-action: pan-y pinch-zoom;
+        }
+
+        &-slide {
+            flex: 0 0 100%;
+            min-width: 0;
+            position: relative;
+            aspect-ratio: 16 / 9;
+            background: var(--ncos-colour-sys-surface-container-high);
+
+            img {
+                width: 100%;
+                height: 100%;
+                display: block;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+
+        &-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: var(--ncos-spacing-xx-small);
+        }
+
+        &-dots {
+            width: 100%;
+            display: flex;
+            gap: var(--ncos-spacing-xxx-small);
+        }
+
+        &-dot {
+            @include button-reset;
+            flex: 1;
+            height: 4px;
+            background: var(--ncos-colour-sys-outline-alt);
+
+            @include media-md {
+                height: 6px;
+            }
+
+            &--active {
+                background: var(--ncos-colour-sys-on-surface);
+            }
+        }
+
+        &-counter {
+            width: 100%;
+        }
+    }
+}

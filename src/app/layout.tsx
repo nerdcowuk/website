@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Lora } from "next/font/google";
 import localFont from "next/font/local";
-import Box from '@/components/blocks/Box/Box';
+import Box from '@/components/primitives/Box';
 import "@/styles/globals.scss";
 
 // Google Font: Lora (body font)

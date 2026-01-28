@@ -1,10 +1,12 @@
-export function normalizeBlockName(blockName: string | null): string {
-	if (!blockName) return '';
-	const nameParts = blockName.split('/').pop()?.split(/[-_]/) || [];
-	return nameParts.map(part => part.charAt(0).toUpperCase() + part.slice(1)).join('');
-}
+/**
+ * Block Name Normalization (Re-export)
+ *
+ * This file re-exports the normalizeBlockName function from '@/lib/wordpress/blocks'
+ * for backward compatibility.
+ * New code should import directly from '@/lib/wordpress/blocks' or '@/lib/wordpress'.
+ *
+ * @module normalize-block-name
+ * @deprecated Import from '@/lib/wordpress/blocks' or '@/lib/wordpress' instead
+ */
 
-// Examples:
-// 'custom/hero' → 'Hero'
-// 'core/paragraph' → 'Paragraph'
-// 'acme/testimonial-block' → 'TestimonialBlock'
+export { normalizeBlockName } from './wordpress/blocks';

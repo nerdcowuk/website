@@ -1,0 +1,14 @@
+/**
+ * Mixins Entry Point
+ *
+ * Usage in component SCSS:
+ *   @use '@/styles/mixins' as *;
+ *
+ *   .my-component {
+ *     @include media-md { ... }
+ *     @include focus-ring;
+ *   }
+ */
+
+@forward 'media';
+@forward 'utilities';

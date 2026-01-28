@@ -1,10 +1,10 @@
 import cn from 'classnames';
 import { ReactNode } from 'react';
-import Box from "@/components/blocks/Box/Box"
-import Text from "@/components/blocks/Text/Text"
+import Box from '@/components/primitives/Box';
+import Text from '@/components/primitives/Text';
 import styles from './InfoBox.module.scss';
-import Icon from '@/components/blocks/Icon';
-import InfoIcon from '@/components/blocks/Icon/svg/info.svg';
+import Icon from '@/components/primitives/Icon';
+import InfoIcon from '@/components/primitives/Icon/svg/info.svg';
 
 interface InfoBoxProps {
     className?: string,

@@ -1,0 +1,41 @@
+/**
+ * Animation Design Tokens
+ *
+ * Consistent timing and easing for all animations.
+ */
+
+:root {
+    // =========================================================================
+    // Durations
+    // =========================================================================
+
+    --ncos-duration-instant: 0ms;
+    --ncos-duration-fast: 100ms;
+    --ncos-duration-normal: 200ms;
+    --ncos-duration-slow: 300ms;
+    --ncos-duration-slower: 500ms;
+
+    // =========================================================================
+    // Easing Functions
+    // =========================================================================
+
+    // Standard easing (most common)
+    --ncos-ease-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+
+    // Decelerate (entering elements)
+    --ncos-ease-decelerate: cubic-bezier(0.0, 0.0, 0.2, 1);
+
+    // Accelerate (exiting elements)
+    --ncos-ease-accelerate: cubic-bezier(0.4, 0.0, 1, 1);
+
+    // Emphasized (attention-drawing)
+    --ncos-ease-emphasized: cubic-bezier(0.2, 0.0, 0, 1);
+
+    // =========================================================================
+    // Composed Transitions
+    // =========================================================================
+
+    --ncos-transition-fast: var(--ncos-duration-fast) var(--ncos-ease-standard);
+    --ncos-transition-normal: var(--ncos-duration-normal) var(--ncos-ease-standard);
+    --ncos-transition-slow: var(--ncos-duration-slow) var(--ncos-ease-standard);
+}

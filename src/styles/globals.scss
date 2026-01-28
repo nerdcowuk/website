@@ -3,9 +3,14 @@
 // ============================================================================
 // This file is imported in app/layout.tsx
 
-// Import foundations
+// Design Tokens
+@use 'tokens';
+
+// Extends (placeholder selectors)
+@use 'extends';
+
+// Foundation styles
 @use './foundations/reset';
-@use './foundations/root';
 @use './foundations/base';
 @use './foundations/section';
 @use './foundations/article';

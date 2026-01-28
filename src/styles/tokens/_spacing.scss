@@ -1,0 +1,70 @@
+/**
+ * Spacing Design Tokens
+ *
+ * Using em-based values that scale with typography.
+ * Naming follows a t-shirt size convention for intuitive use.
+ *
+ * Usage:
+ *   padding: var(--ncos-spacing-medium);
+ *   gap: var(--ncos-spacing-small);
+ *   margin-bottom: var(--ncos-spacing-large);
+ */
+
+:root {
+    // =========================================================================
+    // Base Spacing Scale
+    // =========================================================================
+    // Base: 22px @ 375 -> 32px @ 1440 (matches --font-size)
+
+    --ncos-spacing-xxxx-small: 0.2727em;  // 6px @ 375, 8px @ 1440
+    --ncos-spacing-xxx-small: 0.3636em;   // 8px @ 375, 12px @ 1440
+    --ncos-spacing-xx-small: 0.5em;       // 11px @ 375, 16px @ 1440
+    --ncos-spacing-x-small: 0.7727em;     // 17px @ 375, 24px @ 1440
+    --ncos-spacing-small: 0.8636em;       // 19px @ 375, 28px @ 1440
+    --ncos-spacing-floor: 1em;            // 22px @ 375, 32px @ 1440
+    --ncos-spacing-medium: 1.5em;         // 33px @ 375, 48px @ 1440
+    --ncos-spacing-large: 2em;            // 44px @ 375, 64px @ 1440
+    --ncos-spacing-x-large: 3em;          // 66px @ 375, 96px @ 1440
+    --ncos-spacing-xx-large: 4em;         // 88px @ 375, 128px @ 1440
+    --ncos-spacing-xxx-large: 5em;        // 110px @ 375, 160px @ 1440
+
+    // Special values
+    --ncos-spacing-ceiling: 8em;          // Maximum spacing (128px)
+    --ncos-spacing-auto: auto;            // CSS auto
+
+    // =========================================================================
+    // Semantic Spacing
+    // =========================================================================
+
+    // Content spacing (between elements within a section)
+    --ncos-spacing-content-tight: var(--ncos-spacing-x-small);
+    --ncos-spacing-content-normal: var(--ncos-spacing-medium);
+    --ncos-spacing-content-loose: var(--ncos-spacing-large);
+
+    // Section spacing (between major sections)
+    --ncos-spacing-section-small: var(--ncos-spacing-x-large);
+    --ncos-spacing-section-medium: var(--ncos-spacing-xx-large);
+    --ncos-spacing-section-large: var(--ncos-spacing-xxx-large);
+
+    // Component internal spacing
+    --ncos-spacing-inset-small: var(--ncos-spacing-x-small);
+    --ncos-spacing-inset-medium: var(--ncos-spacing-small);
+    --ncos-spacing-inset-large: var(--ncos-spacing-medium);
+
+    // =========================================================================
+    // Layout Widths
+    // =========================================================================
+
+    --ncos-width-narrow: 40rem;           // ~640px - text content
+    --ncos-width-medium: 60rem;           // ~960px - cards, forms
+    --ncos-width-wide: 80rem;             // ~1280px - full layouts
+    --ncos-width-full: 100%;              // Full width
+
+    // =========================================================================
+    // Gutter Widths
+    // =========================================================================
+
+    --ncos-gutter-small: var(--ncos-spacing-small);
+    --ncos-gutter-medium: var(--ncos-spacing-medium);
+    --ncos-gutter-large: var(--ncos-spacing-large);
+}

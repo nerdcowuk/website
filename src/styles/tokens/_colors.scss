@@ -1,0 +1,210 @@
+/**
+ * Color Design Tokens
+ *
+ * Based on Material Design 3 color system.
+ * Generate variations using: https://m3.material.io/theme-builder
+ *
+ * Naming convention:
+ * --ncos-colour-{system}-{role}[-{variant}]
+ *
+ * Systems:
+ * - sys: System colors (semantic usage)
+ * - ref: Reference colors (raw palette)
+ *
+ * Roles:
+ * - primary, secondary, tertiary: Brand colors
+ * - surface: Backgrounds
+ * - on-*: Text/icons on that surface
+ * - outline: Borders
+ * - error, success, warning: Status colors
+ */
+
+:root {
+    // =========================================================================
+    // System Colors (semantic usage)
+    // =========================================================================
+
+    // Primary
+    --ncos-colour-sys-primary: #ff1c50;
+    --ncos-colour-sys-on-primary: #ffffff;
+    --ncos-colour-sys-primary-container: #ffe8f3;
+    --ncos-colour-sys-on-primary-container: #b20029;
+
+    --ncos-colour-sys-primary-alt: #FAC0D9;
+    --ncos-colour-sys-on-primary-alt: #030128;
+
+    // Secondary
+    --ncos-colour-sys-secondary: #153cff;
+    --ncos-colour-sys-on-secondary: #ffffff;
+    --ncos-colour-sys-on-secondary-alt: #bdcbff;
+    --ncos-colour-sys-secondary-container: #e3e9ff;
+    --ncos-colour-sys-on-secondary-container: #001eb2;
+
+    // Tertiary
+    --ncos-colour-sys-tertiary: #e5ca31;
+    --ncos-colour-sys-on-tertiary: #171213;
+    --ncos-colour-sys-tertiary-container: #f9f3d2;
+    --ncos-colour-sys-on-tertiary-container: #a89110;
+
+    // Outline
+    --ncos-colour-sys-outline: #7b7a85;
+    --ncos-colour-sys-outline-alt: #c0bfd4;
+
+    // Status
+    --ncos-colour-sys-error: #b20029;
+    --ncos-colour-sys-on-error: #ffffff;
+
+    --ncos-colour-sys-success: #2d7d64;
+    --ncos-colour-sys-on-success: #ffffff;
+
+    // Surface
+    --ncos-colour-sys-surface: #f6f7fe;
+    --ncos-colour-sys-on-surface: #171213;
+    --ncos-colour-sys-on-surface-alt: #45454f;
+
+    --ncos-colour-sys-surface-container-low: #ffffff;
+    --ncos-colour-sys-surface-container: #eef0fc;
+    --ncos-colour-sys-surface-container-high: #e7eaf9;
+
+    --ncos-colour-sys-contrast-surface: #030128;
+    --ncos-colour-sys-on-contrast-surface: #f6f7fe;
+
+    --ncos-colour-sys-surface-bridge: #fac0d9;
+    --ncos-colour-sys-surface-bridge-alt: #f1e1eb;
+
+    // =========================================================================
+    // State Layer Colors
+    // =========================================================================
+
+    // Primary state layers
+    --ncos-colour-state-layer-primary-opacity-08: #ff1c50;
+    --ncos-colour-state-layer-primary-opacity-12: #ff1c50;
+    --ncos-colour-state-layer-primary-opacity-16: #ff1c50;
+
+    --ncos-colour-state-layer-on-primary-opacity-08: #ffffff;
+    --ncos-colour-state-layer-on-primary-opacity-12: #ffffff;
+    --ncos-colour-state-layer-on-primary-opacity-16: #ffffff;
+
+    --ncos-colour-state-layer-primary-container-opacity-08: #ffe8f3;
+    --ncos-colour-state-layer-primary-container-opacity-12: #ffe8f3;
+    --ncos-colour-state-layer-primary-container-opacity-16: #ffe8f3;
+
+    --ncos-colour-state-layer-on-primary-container-opacity-08: #b20029;
+    --ncos-colour-state-layer-on-primary-container-opacity-12: #b20029;
+    --ncos-colour-state-layer-on-primary-container-opacity-16: #b20029;
+
+    // Secondary state layers
+    --ncos-colour-state-layer-secondary-opacity-08: #153cff;
+    --ncos-colour-state-layer-secondary-opacity-12: #153cff;
+    --ncos-colour-state-layer-secondary-opacity-16: #153cff;
+
+    --ncos-colour-state-layer-on-secondary-opacity-08: #ffffff;
+    --ncos-colour-state-layer-on-secondary-opacity-12: #ffffff;
+    --ncos-colour-state-layer-on-secondary-opacity-16: #ffffff;
+
+    --ncos-colour-state-layer-on-secondary-alt-opacity-08: #bdcbff;
+    --ncos-colour-state-layer-on-secondary-alt-opacity-12: #bdcbff;
+    --ncos-colour-state-layer-on-secondary-alt-opacity-16: #bdcbff;
+
+    --ncos-colour-state-layer-secondary-container-opacity-08: #e3e9ff;
+    --ncos-colour-state-layer-secondary-container-opacity-12: #e3e9ff;
+    --ncos-colour-state-layer-secondary-container-opacity-16: #e3e9ff;
+
+    --ncos-colour-state-layer-on-secondary-container-opacity-08: #001eb2;
+    --ncos-colour-state-layer-on-secondary-container-opacity-12: #001eb2;
+    --ncos-colour-state-layer-on-secondary-container-opacity-16: #001eb2;
+
+    // Tertiary state layers
+    --ncos-colour-state-layer-tertiary-opacity-08: #e5ca31;
+    --ncos-colour-state-layer-tertiary-opacity-12: #e5ca31;
+    --ncos-colour-state-layer-tertiary-opacity-16: #e5ca31;
+
+    --ncos-colour-state-layer-on-tertiary-opacity-08: #171213;
+    --ncos-colour-state-layer-on-tertiary-opacity-12: #171213;
+    --ncos-colour-state-layer-on-tertiary-opacity-16: #171213;
+
+    --ncos-colour-state-layer-tertiary-container-opacity-08: #f9f3d2;
+    --ncos-colour-state-layer-tertiary-container-opacity-12: #f9f3d2;
+    --ncos-colour-state-layer-tertiary-container-opacity-16: #f9f3d2;
+
+    --ncos-colour-state-layer-on-tertiary-container-opacity-08: #a89110;
+    --ncos-colour-state-layer-on-tertiary-container-opacity-12: #a89110;
+    --ncos-colour-state-layer-on-tertiary-container-opacity-16: #a89110;
+
+    // Error state layers
+    --ncos-colour-state-layer-error-opacity-08: #b20029;
+    --ncos-colour-state-layer-error-opacity-12: #b20029;
+    --ncos-colour-state-layer-error-opacity-16: #b20029;
+
+    --ncos-colour-state-layer-on-error-opacity-08: #ffffff;
+    --ncos-colour-state-layer-on-error-opacity-12: #ffffff;
+    --ncos-colour-state-layer-on-error-opacity-16: #ffffff;
+
+    // Success state layers
+    --ncos-colour-state-layer-success-opacity-08: #2d7d64;
+    --ncos-colour-state-layer-success-opacity-12: #2d7d64;
+    --ncos-colour-state-layer-success-opacity-16: #2d7d64;
+
+    --ncos-colour-state-layer-on-success-opacity-08: #ffffff;
+    --ncos-colour-state-layer-on-success-opacity-12: #ffffff;
+    --ncos-colour-state-layer-on-success-opacity-16: #ffffff;
+
+    // Outline state layers
+    --ncos-colour-state-layer-outline-opacity-08: #7b7a85;
+    --ncos-colour-state-layer-outline-opacity-12: #7b7a85;
+    --ncos-colour-state-layer-outline-opacity-16: #7b7a85;
+
+    --ncos-colour-state-layer-outline-alt-opacity-08: #c0bfd4;
+    --ncos-colour-state-layer-outline-alt-opacity-12: #c0bfd4;
+    --ncos-colour-state-layer-outline-alt-opacity-16: #c0bfd4;
+
+    // Surface state layers
+    --ncos-colour-state-layer-surface-opacity-08: #f6f7fe;
+    --ncos-colour-state-layer-surface-opacity-12: #ffffff;
+    --ncos-colour-state-layer-surface-opacity-16: #ffffff;
+
+    --ncos-colour-state-layer-surface-bridge-opacity-08: #fac0d9;
+    --ncos-colour-state-layer-surface-bridge-opacity-12: #fac0d9;
+    --ncos-colour-state-layer-surface-bridge-opacity-16: #fac0d9;
+
+    --ncos-colour-state-layer-surface-bridge-alt-opacity-08: #f1e1eb;
+    --ncos-colour-state-layer-surface-bridge-alt-opacity-12: #f1e1eb;
+    --ncos-colour-state-layer-surface-bridge-alt-opacity-16: #f1e1eb;
+
+    --ncos-colour-state-layer-on-surface-opacity-08: #171213;
+    --ncos-colour-state-layer-on-surface-opacity-12: #171213;
+    --ncos-colour-state-layer-on-surface-opacity-16: #171213;
+
+    --ncos-colour-state-layer-on-surface-alt-opacity-08: #45454f;
+    --ncos-colour-state-layer-on-surface-alt-opacity-12: #45454f;
+    --ncos-colour-state-layer-on-surface-alt-opacity-16: #45454f;
+
+    --ncos-colour-state-layer-surface-container-low-opacity-08: #ffffff;
+    --ncos-colour-state-layer-surface-container-low-opacity-12: #ffffff;
+    --ncos-colour-state-layer-surface-container-low-opacity-16: #ffffff;
+
+    --ncos-colour-state-layer-surface-container-opacity-08: #eef0fc;
+    --ncos-colour-state-layer-surface-container-opacity-12: #eef0fc;
+    --ncos-colour-state-layer-surface-container-opacity-16: #eef0fc;
+
+    --ncos-colour-state-layer-surface-container-high-opacity-08: #e7eaf9;
+    --ncos-colour-state-layer-surface-container-high-opacity-12: #e7eaf9;
+    --ncos-colour-state-layer-surface-container-high-opacity-16: #e7eaf9;
+
+    --ncos-colour-state-layer-contrast-surface-opacity-08: #030128;
+    --ncos-colour-state-layer-contrast-surface-opacity-12: #030128;
+    --ncos-colour-state-layer-contrast-surface-opacity-16: #030128;
+
+    --ncos-colour-state-layer-on-contrast-surface-opacity-08: #f6f7fe;
+    --ncos-colour-state-layer-on-contrast-surface-opacity-12: #f6f7fe;
+    --ncos-colour-state-layer-on-contrast-surface-opacity-16: #f6f7fe;
+
+    // =========================================================================
+    // State Layer Opacities
+    // =========================================================================
+
+    --ncos-state-hover-opacity: 0.08;
+    --ncos-state-focus-opacity: 0.12;
+    --ncos-state-pressed-opacity: 0.12;
+    --ncos-state-dragged-opacity: 0.16;
+}

@@ -1,0 +1,49 @@
+/**
+ * Global Error Page Styles
+ *
+ * Provides styling for the error boundary page with a centered layout
+ * and clear visual hierarchy for error messaging.
+ */
+
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    padding: var(--ncos-spacing-medium);
+
+    &__content {
+        max-width: 40rem;
+        text-align: center;
+    }
+
+    &__title {
+        color: var(--ncos-colour-sys-error);
+    }
+
+    &__message {
+        color: var(--ncos-colour-sys-on-surface-alt);
+    }
+
+    &__details {
+        margin-top: var(--ncos-spacing-small);
+        padding: var(--ncos-spacing-small);
+        background: var(--ncos-colour-sys-surface-container);
+        border: 1px solid var(--ncos-colour-sys-outline-alt);
+        border-radius: 8px;
+        text-align: left;
+        overflow-x: auto;
+
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-break: break-word;
+            color: var(--ncos-colour-sys-error);
+        }
+    }
+
+    &__actions {
+        justify-content: center;
+        margin-top: var(--ncos-spacing-small);
+    }
+}

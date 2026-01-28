@@ -1,0 +1,144 @@
+/**
+ * Typography Design Tokens
+ *
+ * Based on a modular scale with flexible sizing.
+ *
+ * Font Sizes:
+ * - Use rem for accessibility (respects user font size preference)
+ * - Scale: 1.125 (major second) for body, 1.25 (major third) for headings
+ *
+ * Line Heights:
+ * - Unitless values (multiply font size)
+ * - Tighter for headings (1.1-1.3)
+ * - Looser for body text (1.5-1.7)
+ */
+
+:root {
+    // =========================================================================
+    // Font Families
+    // =========================================================================
+
+    --ncos-font-family-display: 'Tandelle', sans-serif;
+    --ncos-font-family-body: 'Lora', sans-serif;
+
+    // Semantic aliases
+    --ncos-font-family-heading: var(--ncos-font-family-display);
+    --ncos-font-family-code: 'Fira Code', 'Consolas', 'Monaco', monospace;
+
+    // =========================================================================
+    // Font Weights
+    // =========================================================================
+
+    --ncos-font-weight-bold: 700;
+    --ncos-font-weight-medium: 750;
+    --ncos-font-weight-regular: 400;
+
+    // Additional weights from plan
+    --ncos-font-weight-thin: 100;
+    --ncos-font-weight-light: 300;
+    --ncos-font-weight-semibold: 600;
+    --ncos-font-weight-black: 900;
+
+    // =========================================================================
+    // Font Styles
+    // =========================================================================
+
+    --ncos-font-style-normal: 'normal';
+    --ncos-font-style-italic: 'italic';
+
+    // =========================================================================
+    // Font Sizes
+    // =========================================================================
+
+    --ncos-font-size-floor: max(1.375rem, 2.25vw);
+    --ncos-font-size-xxxx-small: max(0.6875rem, 50%);
+    --ncos-font-size-xxx-small: max(0.9375rem, 60%);
+    --ncos-font-size-xx-small: max(1rem, 70%);
+    --ncos-font-size-x-small: max(1.0625rem, 80%);
+    --ncos-font-size-small: max(1.1875rem, 90%);
+    --ncos-font-size-medium: 120%;
+    --ncos-font-size-large: 140%;
+    --ncos-font-size-x-large: 160%;
+    --ncos-font-size-xx-large: 200%;
+    --ncos-font-size-xxx-large: 280%;
+    --ncos-font-size-xxxx-large: 360%;
+
+    // =========================================================================
+    // Letter Spacing
+    // =========================================================================
+
+    --ncos-letter-spacing: 0em;
+    --ncos-letter-spacing-dense: -0.002em;
+    --ncos-letter-spacing-denser: -0.004em;
+    --ncos-letter-spacing-densest: -0.006em;
+
+    // Additional letter spacing from plan
+    --ncos-letter-spacing-tighter: -0.05em;
+    --ncos-letter-spacing-tight: -0.025em;
+    --ncos-letter-spacing-normal: 0;
+    --ncos-letter-spacing-wide: 0.025em;
+    --ncos-letter-spacing-wider: 0.05em;
+    --ncos-letter-spacing-widest: 0.1em;
+
+    // =========================================================================
+    // Line Heights
+    // =========================================================================
+
+    --ncos-line-height: 1.4;
+    --ncos-line-height-tight: 1.1;
+
+    // Additional line heights from plan
+    --ncos-line-height-snug: 1.25;
+    --ncos-line-height-normal: 1.5;
+    --ncos-line-height-relaxed: 1.625;
+    --ncos-line-height-loose: 1.75;
+
+    // =========================================================================
+    // Preset Compositions
+    // =========================================================================
+
+    // Display
+    --ncos-type-display-large-size: var(--ncos-font-size-xxxx-large);
+    --ncos-type-display-large-weight: var(--ncos-font-weight-bold);
+    --ncos-type-display-large-line-height: var(--ncos-line-height-tight);
+
+    --ncos-type-display-small-size: var(--ncos-font-size-xxx-large);
+    --ncos-type-display-small-weight: var(--ncos-font-weight-semibold);
+    --ncos-type-display-small-line-height: var(--ncos-line-height-tight);
+
+    // Headings
+    --ncos-type-h1-size: var(--ncos-font-size-xx-large);
+    --ncos-type-h1-weight: var(--ncos-font-weight-bold);
+    --ncos-type-h1-line-height: var(--ncos-line-height-snug);
+
+    --ncos-type-h2-size: var(--ncos-font-size-x-large);
+    --ncos-type-h2-weight: var(--ncos-font-weight-semibold);
+    --ncos-type-h2-line-height: var(--ncos-line-height-snug);
+
+    --ncos-type-h3-size: var(--ncos-font-size-large);
+    --ncos-type-h3-weight: var(--ncos-font-weight-semibold);
+    --ncos-type-h3-line-height: var(--ncos-line-height-snug);
+
+    --ncos-type-h4-size: var(--ncos-font-size-medium);
+    --ncos-type-h4-weight: var(--ncos-font-weight-semibold);
+    --ncos-type-h4-line-height: var(--ncos-line-height-normal);
+
+    // Body
+    --ncos-type-body-large-size: var(--ncos-font-size-large);
+    --ncos-type-body-large-weight: var(--ncos-font-weight-regular);
+    --ncos-type-body-large-line-height: var(--ncos-line-height-relaxed);
+
+    --ncos-type-body-small-size: var(--ncos-font-size-small);
+    --ncos-type-body-small-weight: var(--ncos-font-weight-regular);
+    --ncos-type-body-small-line-height: var(--ncos-line-height-normal);
+
+    // Labels & Captions
+    --ncos-type-label-size: var(--ncos-font-size-x-small);
+    --ncos-type-label-weight: var(--ncos-font-weight-medium);
+    --ncos-type-label-line-height: var(--ncos-line-height-normal);
+    --ncos-type-label-letter-spacing: var(--ncos-letter-spacing-wide);
+
+    --ncos-type-caption-size: var(--ncos-font-size-xx-small);
+    --ncos-type-caption-weight: var(--ncos-font-weight-regular);
+    --ncos-type-caption-line-height: var(--ncos-line-height-normal);
+}

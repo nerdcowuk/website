@@ -3,17 +3,13 @@
 
 import { getBlockComponent } from '../lib/block-registry';
 import parse, { domToReact, HTMLReactParserOptions, Element } from 'html-react-parser';
-import Text from './blocks/Text/Text';
-import Icon from '@/components/blocks/Icon';
-import ExternalIcon from '@/components/blocks/Icon/svg/external.svg';
-import styles from './blocks/Text/Text.module.scss';
-
-interface GutenbergBlock {
-    name: string;
-    attrs: Record<string, any>;
-    innerBlocks: GutenbergBlock[];
-    innerHTML: string;
-}
+import Text from '@/components/primitives/Text';
+import Icon from '@/components/primitives/Icon';
+import ExternalIcon from '@/components/primitives/Icon/svg/external.svg';
+import styles from '@/components/primitives/Text/Text.module.scss';
+import { sanitizeBlockHtml } from '@/lib/wordpress/sanitize';
+import { BlockErrorBoundary } from '@/components/BlockErrorBoundary';
+import type { GutenbergBlock } from '@/types';
 
 interface GutenbergRendererProps {
     blocks: GutenbergBlock[];
@@ -104,20 +100,31 @@ export function GutenbergRenderer({ blocks }: GutenbergRendererProps) {
                 // Strip the outer <li> tags and extract inner content
                 const innerContent = block.innerHTML.replace(/^\s*<li[^>]*>(.*)<\/li>\s*$/, '$1');
                 children = extractTextContent(innerContent);
-            } else if (attrs.children) {
+            } else if (attrs.children !== undefined && attrs.children !== null) {
                 // Use attrs.children if available (e.g., for buttons)
-                children = attrs.children;
+                // Cast to ReactNode since block attributes are typed as unknown
+                children = attrs.children as React.ReactNode;
             }
 
             return (
-                <BlockComponent key={`${block.name}-${index}`} {...filteredAttrs}>
-                    {children}
-                </BlockComponent>
+                <BlockErrorBoundary key={`${block.name}-${index}`} blockName={block.name}>
+                    <BlockComponent {...filteredAttrs}>
+                        {children}
+                    </BlockComponent>
+                </BlockErrorBoundary>
             );
         }
 
-        // Fallback for unknown blocks - render innerHTML directly
-        return block.innerHTML ? <div key={`${block.name}-${index}`}>{parse(block.innerHTML)}</div> : null;
+        // Fallback for unknown blocks - render innerHTML with sanitization for security
+        if (block.innerHTML) {
+            return (
+                <BlockErrorBoundary key={`${block.name}-${index}`} blockName={block.name}>
+                    <div>{parse(sanitizeBlockHtml(block.innerHTML))}</div>
+                </BlockErrorBoundary>
+            );
+        }
+
+        return null;
     };
 
     return (

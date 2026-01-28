@@ -1,16 +1,16 @@
 import Link from 'next/link';
-import Box from '@/components/blocks/Box/Box';
-import Text from '@/components/blocks/Text/Text';
-import Stack from '@/components/blocks/Stack/Stack';
-import PostCard from '@/components/blocks/PostCard/PostCard';
-import Divider from '@/components/blocks/Divider/Divider';
+import Box from '@/components/primitives/Box';
+import Text from '@/components/primitives/Text';
+import Stack from '@/components/primitives/Stack';
+import PostCard from '@/components/patterns/PostCard';
+import Divider from '@/components/primitives/Divider';
 import styles from './page.module.scss';
 
 import { getPosts } from '@/lib/wp-fetch';
 import { getTitle, getSlug, getDateString, getAuthorName, getAuthorUrl, getReadTime, getContentImages } from '@/lib/theme-functions';
 
 export default async function BlogListing() {
-	const posts = await getPosts();
+	const { posts } = await getPosts();
 
 	return (
 		<Box className={styles[`archive`]}>
