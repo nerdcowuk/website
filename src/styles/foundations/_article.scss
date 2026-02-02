@@ -1,66 +1,67 @@
+@use '@/styles/extends' as *;
+
 article {
-    max-width: 28em;
     margin: 0 auto;
-    padding: var(--ncos-spacing-x4) 0px;
+    padding: var(--ncos-spacing-medium) var(--ncos-spacing-floor);
 
     header {
-        margin-bottom: var(--ncos-spacing-x4);
+        max-width: 36em !important;
+        margin: 0 auto;
 
-        >*:not(:first-child) {
-            margin-top: var(--ncos-spacing-x4);
+        h5 {
+            text-align: center;
+        }
+
+        h1 {
+            position: relative;
+            line-height: var(--ncos-line-height-tight) !important;
+            max-width: 10em;
+            text-align: center;
+        }
+
+        > div {
+            max-width: 28em;
         }
     }
 
-    h1 {
-        position: relative;
+    main {
+        max-width: 28em;
+        margin: var(--ncos-spacing-medium) auto 0;
 
-        &:before {
-            width: 8px;
-            height: 100%;
-
-            content: '';
-            display: block;
-            
-            position: absolute;
-            left: -32px;
-            top: 0;
-
-            background: var(--ncos-colour-sys-primary);
+        > *:not(:first-child) {
+            margin-top: var(--ncos-spacing-floor);
         }
-    }
 
-    h2, h3 {
-        margin-top: var(--ncos-spacing-x6);
-    }
-
-    h4, h5, h6 {
-        margin-top: var(--ncos-spacing-x5);
-    }
-
-    p {
-        margin-top: var(--ncos-spacing-x4);
-    }
-
-    *:not(header):first-child {
-        margin: 0;
-    }
-
-    figure {
-        margin-top: var(--ncos-spacing-x4);
-
-        @media (min-width: 1100px) {
-            margin-left: -128px;
-            margin-right: -128px;
+        h2, h3 {
+            margin-top: var(--ncos-spacing-x-small);
         }
-    }
 
-    ul {
-        margin-top: var(--ncos-spacing-x4);
+        h4, h5, h6 {
+            margin-top: var(--ncos-spacing-xxx-small);
+        }
+
+        p {
+            font-size: var(--ncos-font-size-small) !important;
+        }
+
+        figure {
+            text-align: center;
+
+            @media (min-width: 1100px) {
+                margin-left: -128px;
+                margin-right: -128px;
+            }
+        }
+
+        ul, ol {
+            font-size: var(--ncos-font-size-small) !important;
+        }
     }
 
     .footnote {
-        margin-top: var(--ncos-spacing-x4);
-        padding-top: var(--ncos-spacing-x4);
+        max-width: 28em;
+        margin: var(--ncos-spacing-floor) auto 0;
+        padding-top: var(--ncos-spacing-floor);
         border-top: 1px solid var(--ncos-colour-sys-outline-alt);
     }
 

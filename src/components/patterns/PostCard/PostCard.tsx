@@ -46,7 +46,7 @@ function Gallery({ images }: { images: PostCardImage[] }) {
     useEffect(() => {
         if (!emblaApi) return;
         emblaApi.on('select', onSelect);
-        onSelect();
+        return () => { emblaApi.off('select', onSelect); };
     }, [emblaApi, onSelect]);
 
     const scrollTo = useCallback((index: number) => {
@@ -65,7 +65,6 @@ function Gallery({ images }: { images: PostCardImage[] }) {
                                 width={image.width ?? undefined}
                                 height={image.height ?? undefined}
                                 sizes={image.sizes ?? '(max-width: 768px) 100vw, 50vw'}
-                                fill={!image.width || !image.height}
                             />
                         </Box>
                     ))}

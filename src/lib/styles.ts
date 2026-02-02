@@ -83,7 +83,6 @@ export const SPACING_TOKENS: readonly SpacingToken[] = [
  */
 export const TEXT_PRESETS: readonly TextPreset[] = [
     'display-large',
-    'display-medium',
     'display-small',
     'heading-1',
     'heading-2',
@@ -91,9 +90,8 @@ export const TEXT_PRESETS: readonly TextPreset[] = [
     'heading-4',
     'heading-5',
     'heading-6',
-    'body',
-    'body-md',
-    'body-sm',
+    'body-large',
+    'body-small',
     'caption',
     'label',
     'overline',

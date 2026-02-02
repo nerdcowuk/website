@@ -394,7 +394,6 @@ describe('TEXT_PRESETS', () => {
 
     it('should include display presets', () => {
         expect(TEXT_PRESETS).toContain('display-large');
-        expect(TEXT_PRESETS).toContain('display-medium');
         expect(TEXT_PRESETS).toContain('display-small');
     });
 
@@ -408,9 +407,8 @@ describe('TEXT_PRESETS', () => {
     });
 
     it('should include body presets', () => {
-        expect(TEXT_PRESETS).toContain('body');
-        expect(TEXT_PRESETS).toContain('body-md');
-        expect(TEXT_PRESETS).toContain('body-sm');
+        expect(TEXT_PRESETS).toContain('body-large');
+        expect(TEXT_PRESETS).toContain('body-small');
     });
 
     it('should include utility text presets', () => {

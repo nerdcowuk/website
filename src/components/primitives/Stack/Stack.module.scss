@@ -1,6 +1,7 @@
 .ncos-stack {
   // Base stack (flexbox) styles
   display: flex;
+  gap: var(--ncos-spacing-floor);
 
   // Direction modifiers
   &--direction-row {

@@ -65,7 +65,7 @@ export default function AuthorBox({
                 />
             )}
             <Box>
-                <Text preset="body-md">
+                <Text preset="body-small">
                     <Text as="a" href={authorUrl}>{name}</Text> is a <Text as="strong">{role}</Text> at NerdCow, {children}
                 </Text>
             </Box>

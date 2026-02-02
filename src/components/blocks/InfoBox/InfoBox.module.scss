@@ -1,23 +1,33 @@
 .ncos-info-box {
     background: var(--ncos-colour-sys-primary-container);
-    padding: var(--ncos-spacing-x3);
+    padding: var(--ncos-spacing-x-small);
 
     display: flex;
     flex-direction: column;
-    gap: var(--ncos-spacing-x1);
+    gap: var(--ncos-spacing-x-small);
 
     &__title {
         display: flex;
         align-items: center;
-        gap: var(--ncos-spacing-x1);
+        gap: var(--ncos-spacing-xxx-small);
 
         svg {
+            width: 1.5em;
+            height: 1.5em;
             flex-shrink: 0;
         }
         
         svg,
-        label {
+        h5 {
             color: var(--ncos-colour-sys-on-primary-container);
         }
+
+        h5 {
+            margin-top: 0;
+        }
+    }
+    
+    p {
+        margin-top: 0;
     }
 }

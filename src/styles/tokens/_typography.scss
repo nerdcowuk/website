@@ -53,15 +53,15 @@
     --ncos-font-size-floor: max(1.375rem, 2.25vw);
     --ncos-font-size-xxxx-small: max(0.6875rem, 50%);
     --ncos-font-size-xxx-small: max(0.9375rem, 60%);
-    --ncos-font-size-xx-small: max(1rem, 70%);
-    --ncos-font-size-x-small: max(1.0625rem, 80%);
-    --ncos-font-size-small: max(1.1875rem, 90%);
+    --ncos-font-size-xx-small: max(1rem, 65%);
+    --ncos-font-size-x-small: max(1.0625rem, 75%);
+    --ncos-font-size-small: 85%;
     --ncos-font-size-medium: 120%;
     --ncos-font-size-large: 140%;
     --ncos-font-size-x-large: 160%;
     --ncos-font-size-xx-large: 200%;
-    --ncos-font-size-xxx-large: 280%;
-    --ncos-font-size-xxxx-large: 360%;
+    --ncos-font-size-xxx-large: 235%;
+    --ncos-font-size-xxxx-large: 290%;
 
     // =========================================================================
     // Letter Spacing
@@ -141,4 +141,15 @@
     --ncos-type-caption-size: var(--ncos-font-size-xx-small);
     --ncos-type-caption-weight: var(--ncos-font-weight-regular);
     --ncos-type-caption-line-height: var(--ncos-line-height-normal);
+}
+
+@media (min-width: 64em) {
+    :root {
+        --ncos-font-size-medium: 125%;
+        --ncos-font-size-large: 150%;
+        --ncos-font-size-x-large: 175%;
+        --ncos-font-size-xx-large: 260%;
+        --ncos-font-size-xxx-large: 370%;
+        --ncos-font-size-xxxx-large: 480%;
+    }
 }

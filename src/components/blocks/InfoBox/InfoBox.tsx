@@ -1,5 +1,4 @@
 import cn from 'classnames';
-import { ReactNode } from 'react';
 import Box from '@/components/primitives/Box';
 import Text from '@/components/primitives/Text';
 import styles from './InfoBox.module.scss';
@@ -27,7 +26,7 @@ export default function InfoBox({
         <Box className={classNames} {...restProps}>
             <Box className={styles['ncos-info-box__title']}>
                 <Icon icon={InfoIcon} size={24} />
-                <Text as="label" preset="label">{title}</Text>
+                <Text as="h5">{title}</Text>
             </Box>
             <Box className={styles['ncos-info-box__body']}>
                 {children}

@@ -47,9 +47,8 @@ export type TextPreset =
     | 'heading-4'
     | 'heading-5'
     | 'heading-6'
-    | 'body'
-    | 'body-md'
-    | 'body-sm'
+    | 'body-large'
+    | 'body-small'
     | 'caption'
     | 'label'
     | 'overline';

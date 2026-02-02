@@ -17,7 +17,7 @@ export default async function BlogListing() {
 			<Box as='section' className={styles[`archive__featured`]}>
 				<Stack direction='column' spacing='floor'>
 					<Stack direction='column' spacing='x-small'>
-						<Text as="label" preset="heading-5">Featured</Text>
+						<Text as="h5">Featured</Text>
 						<Text as="h1" preset='display-small'>Website navigation for a complex SaaS product structure</Text>
 					</Stack>
 					<Text>When a SaaS product grows beyond solving one problem for a small audience, creating user journeys becomes a hassle.</Text>
@@ -54,14 +54,14 @@ export default async function BlogListing() {
 					</Stack>
 				</Stack>
 				<Stack direction='column' as='aside'>
-					Categories bro
+					<div>Categories brooo</div>
 				</Stack>
 			</Box>
 			<Box as="section" className={`${styles['archive__feed']} ${styles['archive__feed--latest']}`} >
 				<Stack direction='column' spacing='floor'>
 					<Text as={'h5'}>Latest</Text>
 					<Stack spacing='small' direction='column'>
-						{posts.map((post, index) => (
+						{posts.map((post) => (
 							<>
 								<PostCard
 									key={post.id}
@@ -79,7 +79,7 @@ export default async function BlogListing() {
 					</Stack>
 				</Stack>
 				<Stack direction='column' as='aside'>
-					Most popular brooo
+					<div>Most popular brooo</div>
 				</Stack>
 			</Box>
 		</Box>

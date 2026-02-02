@@ -1,10 +1,10 @@
 .ncos-list__item {
-    padding-left: var(--ncos-spacing-x4);
+    padding-left: var(--ncos-spacing-medium);
     position: relative;
 
     &:before {
-        width: 32px;
-        height: 36px;
+        width: 1.5em;
+        height: 1.5em;
         content: '';
         display: block;
         top: 0;
