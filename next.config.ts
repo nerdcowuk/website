@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
 				protocol: 'https',
 				hostname: 'secure.gravatar.com',
 			},
+			{
+				protocol: 'https',
+				hostname: 'nerdcow.co.uk',
+			},
 		],
 		dangerouslyAllowLocalIP: true,
 	},

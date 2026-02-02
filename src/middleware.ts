@@ -45,6 +45,7 @@ const CSP_DIRECTIVES = {
     'https://*.wp.com',
     // Allow images from WordPress API
     'https://nerdcowcouk.local',
+    'https://nerdcow.co.uk',
     // Gravatar for author avatars
     'https://secure.gravatar.com',
     'https://*.gravatar.com',
@@ -69,6 +70,7 @@ const CSP_DIRECTIVES = {
     "'self'",
     // WordPress API
     'https://nerdcowcouk.local',
+    'https://nerdcow.co.uk',
     // Allow localhost in development for hot reload
     ...(process.env.NODE_ENV === 'development'
       ? ['ws://localhost:*', 'http://localhost:*']
