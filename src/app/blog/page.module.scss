@@ -10,8 +10,8 @@
         }
 
         h1 {
-            text-transform: uppercase;
-            line-height: var(--ncos-line-height-tight);
+            font-size: var(--ncos-font-size-xxx-large);
+            line-height: var(--ncos-line-height-snug);
             color: var(--ncos-colour-sys-primary);
             max-width: 10em;
         }
@@ -20,6 +20,18 @@
             color: var(--ncos-colour-sys-on-contrast-surface);
             max-width: 35em;
         }
+
+        label {
+            color: var(--ncos-colour-sys-on-secondary-alt);
+        }
+
+        &__meta {
+            flex-wrap: wrap;
+            
+            > * {
+                flex-shrink: 0;
+            }
+        }
     }
 
     &__feed {
@@ -27,13 +39,35 @@
 	    padding-bottom: var(--ncos-spacing-medium);
         gap: var(--ncos-spacing-large);
 
-        div {
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (min-width: 64em) {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+        }
+
+        > div {
             grid-column: span 8;
         }
 
-        aside {
-            background: red;
+        > aside {
             grid-column: span 4;
+        }
+
+        &--picks {
+            background: var(--ncos-colour-sys-secondary-container);
+
+            h5 {
+                color: var(--ncos-colour-sys-secondary);
+            }
+        }
+
+        &--latest {
+
+            h5 {
+                color: var(--ncos-colour-sys-primary);
+            }
         }
     }
 }

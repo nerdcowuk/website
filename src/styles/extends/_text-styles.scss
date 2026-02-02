@@ -4,6 +4,7 @@
     font-weight: var(--ncos-font-weight-bold);
     letter-spacing: var(--ncos-letter-spacing-densest);
     line-height: var(--ncos-line-height);
+    text-transform: uppercase;
 }
 
 %text-style-display-small {
@@ -12,6 +13,7 @@
     font-weight: var(--ncos-font-weight-bold);
     letter-spacing: var(--ncos-letter-spacing-dense);
     line-height: var(--ncos-line-height);
+    text-transform: uppercase;
 }
 
 %text-style-heading-1 {

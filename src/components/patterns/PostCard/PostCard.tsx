@@ -132,13 +132,13 @@ export default function PostCard({
                 )}
                 <Stack spacing={'xx-small'} direction='column'>
                     <Text as={'h4'}><Link href={url} title={title}>{title}</Link></Text>
-                    <Stack direction='row' spacing='xxx-small'>
+                    <Stack direction='row' spacing='xxx-small' className={styles[`ncos-post-card__meta`]}>
                         {authorName && (
                             <Text preset='caption'>
                                 {authorUrl ? <Link href={authorUrl}>{authorName}</Link> : authorName}
                             </Text>
                         )}
-                        <Stack direction='row' spacing='xxx-small' wrap={false}>
+                        <Stack direction='row' spacing='xxx-small'>
                             {date && <Text preset='caption'>{date}</Text>}
                             {readTime && (
                                 <>

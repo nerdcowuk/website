@@ -17,13 +17,13 @@ export default async function BlogListing() {
 			<Box as='section' className={styles[`archive__featured`]}>
 				<Stack direction='column' spacing='floor'>
 					<Stack direction='column' spacing='x-small'>
-						<Text preset="heading-5">Featured</Text>
+						<Text as="label" preset="heading-5">Featured</Text>
 						<Text as="h1" preset='display-small'>Website navigation for a complex SaaS product structure</Text>
 					</Stack>
 					<Text>When a SaaS product grows beyond solving one problem for a small audience, creating user journeys becomes a hassle.</Text>
-					<Stack direction='row' spacing='xxx-small'>
+					<Stack direction='row' spacing='xxx-small' className={styles[`archive__featured__meta`]}>
 						<Text preset='caption'><Link href={'#'}>Dawid Zimny</Link></Text>
-						<Stack direction='row' spacing='xxx-small' wrap={false}>
+						<Stack direction='row' spacing='xxx-small'>
 							<Text preset='caption'>14th Nov 2025</Text>
 							<Text preset='caption'>|</Text>
 							<Text preset='caption'>7 min</Text>
@@ -31,7 +31,7 @@ export default async function BlogListing() {
 					</Stack>
 				</Stack>
 			</Box>
-			<Box as="section" className={styles[`archive__feed`]}>
+			<Box as="section" className={`${styles['archive__feed']} ${styles['archive__feed--picks']}`} >
 				<Stack direction='column' spacing='floor'>
 					<Text as={'h5'}>Just for you</Text>
 					<Stack spacing='small' direction='column'>
@@ -54,13 +54,10 @@ export default async function BlogListing() {
 					</Stack>
 				</Stack>
 				<Stack direction='column' as='aside'>
-					Praaaa
+					Categories bro
 				</Stack>
 			</Box>
-			<Box as='section'>
-				Categories bro
-			</Box>
-			<Box as="section" className={styles[`archive__feed`]}>
+			<Box as="section" className={`${styles['archive__feed']} ${styles['archive__feed--latest']}`} >
 				<Stack direction='column' spacing='floor'>
 					<Text as={'h5'}>Latest</Text>
 					<Stack spacing='small' direction='column'>
@@ -82,7 +79,7 @@ export default async function BlogListing() {
 					</Stack>
 				</Stack>
 				<Stack direction='column' as='aside'>
-					Praaaa
+					Most popular brooo
 				</Stack>
 			</Box>
 		</Box>

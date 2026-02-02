@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
 				hostname: 'secure.gravatar.com',
 			},
 		],
+		dangerouslyAllowLocalIP: true,
 	},
 	turbopack: {
 		rules: {
